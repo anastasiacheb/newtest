@@ -141,7 +141,7 @@
 
     &_icon {
         &:before {
-            content: url('/public/icons/Vector12.svg');
+            content: url('../../public/icons/Vector12.svg');
             width: 2.9rem;
             height: auto;
             margin-left: 1rem;
@@ -183,7 +183,7 @@
     height: auto;
 
     &:after {
-        content: url('/public/icons/arrow.svg');
+        content: url('../../public/icons/arrow.svg');
         width: 2.9rem;
         height: auto;
         margin-left: 1rem;

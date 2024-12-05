@@ -1,35 +1,35 @@
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-UltraLight.woff2);
+  src: url(../../public/fonts/subset-Gilroy-UltraLight.woff2);
   font-family: "Gilroy";
   font-weight: 200;
 }
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-Light.woff2);
+  src: url(../../public/fonts/subset-Gilroy-Light.woff2);
   font-family: "Gilroy";
   font-weight: 300;
 }
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-Regular.woff2);
+  src: url(../../public/fonts/subset-Gilroy-Regular.woff2);
   font-family: "Gilroy";
   font-weight: 400;
 }
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-Medium.woff2);
+  src: url(../../public/fonts/subset-Gilroy-Medium.woff2);
   font-family: "Gilroy";
   font-weight: 500;
 }
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-SemiBold.woff2);
+  src: url(../../public/fonts/subset-Gilroy-SemiBold.woff2);
   font-family: "Gilroy";
   font-weight: 600;
 }
 @font-face {
-  src: url(/public/fonts/subset-Gilroy-Bold.woff2);
+  src: url(../../public/fonts/subset-Gilroy-Bold.woff2);
   font-family: "Gilroy";
   font-weight: 700;
 }
 @font-face {
-  src: url(/public/fonts/DINPro.woff2);
+  src: url(../../public/fonts/DINPro.woff2);
   font-family: "DINPro";
   font-weight: 500;
 }
@@ -461,7 +461,7 @@ button {
   color: #FFFFFF;
 }
 .button_icon:before {
-  content: url("/public/icons/Vector12.svg");
+  content: url("../../public/icons/Vector12.svg");
   width: 2.9rem;
   height: auto;
   margin-left: 1rem;
@@ -505,7 +505,7 @@ button {
   height: auto;
 }
 .button-next:after {
-  content: url("/public/icons/arrow.svg");
+  content: url("../../public/icons/arrow.svg");
   width: 2.9rem;
   height: auto;
   margin-left: 1rem;
@@ -1747,7 +1747,7 @@ input:-webkit-autofill:active {
 }
 
 .section-blur {
-  background: url("../../../../public/images/i(11)1.png") no-repeat;
+  background: url("../../public/images/i(11)1.png") no-repeat;
   background-position: top 0% left 50%;
   display: block;
   height: auto;
