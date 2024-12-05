@@ -1,0 +1,15 @@
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin font ($size,$line) {
+    font-size: $size + rem;
+    line-height: $line + rem;
+}

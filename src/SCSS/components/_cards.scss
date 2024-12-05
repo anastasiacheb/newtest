@@ -1,0 +1,439 @@
+@use "../abstracts" as *;
+
+.card {
+    padding: 2.2rem;
+    border-radius: 2rem;
+    position: relative;
+
+    & > h3 {
+        @include regular;
+        text-transform: uppercase;
+        color: $lightgray;
+        @include font(1.4, 1.9);
+        padding-left: 0.8rem;
+        padding-top: 0.8rem;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    & > h4 {
+        @include din;
+        text-transform: uppercase;
+        @include font(1.5, 2.2);
+        padding-left: 0.8rem;
+        padding-top: 0.4rem;
+
+        @include tablet {
+            text-align: center;
+            width: 18rem;
+            margin: auto;
+            padding-top: 1rem;
+        }
+    }
+
+    & > p {
+        @include medium;
+        @include font(2, 2.8);
+        text-align: center;
+        margin-top: 0.4rem;
+    }
+
+    & > img {
+        position: absolute;
+        top: 4rem;
+    }
+
+    &__list {
+        @include column;
+        gap: 1.2rem;
+        padding-top: 1.2rem;
+
+        @include tablet {
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 1.4rem;
+        align-items: start;
+
+        & img {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &__inner {
+        @include column;
+        gap: 0.4rem;
+        position: relative;
+
+        & h5 {
+            @include medium;
+            @include font(1.4, 1.9);
+        }
+
+        & > p {
+            @include font(1.4, 1.5);
+            color: $lightgray;
+        }
+    }
+
+    & button {
+        margin: auto;
+        margin-top: 0.4rem;
+
+        @include tablet {
+            margin-top: 1rem;
+        }
+    }
+
+    @include tablet {
+        padding: 3rem;
+    }
+
+    &_var {
+        color: $white;
+
+        & p {
+            color: $white;
+        }
+    }
+
+    &__price {
+        @include font(1.4, 1.9);
+        text-decoration: line-through;
+    }
+
+    &__tag {
+        padding: 1rem 3rem;
+        border: 1px solid $muteorange;
+        border-radius: 0.7rem;
+        position: relative;
+        margin-top: 1rem;
+
+        @include tablet {
+            padding: 1rem 3rem;
+        }
+
+        & p {
+            @include font(1.4, 1.6);
+        }
+
+        & div {
+            @include center;
+            position: absolute;
+            background-color: $dark;
+            padding: 0.5rem;
+            left: 0;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        &_white {
+            & div {
+            background-color: $white;
+            }
+        }
+    }
+
+    &__foot {
+        width: 100%;
+    }
+
+    &_white {
+        background-color: $white;
+        box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.1);
+    }
+
+    &_dark {
+        background-color: $dark;
+    }
+
+    &_border {
+        border: 1px solid $muteorange;
+    }
+}
+
+.card-acc {
+    background-color: $white;
+    border-radius: 1.5rem;
+    padding: 2.2rem 1.4rem;
+    transition: $transition;
+    display: flex;
+    gap: 0.7rem;
+    align-items: start;
+    cursor: pointer;
+
+    @include tablet {
+        gap: 2rem;
+    }
+
+    &:hover {
+        background-color: #FFFDF6;
+    }
+
+    @include tablet {
+        padding: 2.2rem 2.6rem;
+    }
+
+    &__button {
+        @include center;
+        transition: $transition;
+        border-radius: 1rem;
+        font-size: 4.5rem;
+        width: 4.2rem;
+        height: 3.7rem;
+        background-color: $white;
+        color: $orange;
+        flex-basis: 4.2rem;
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+
+        @include tablet {
+            width: 4.8rem;
+            height: 4.8rem;
+            flex-basis: 4.8rem;
+        }
+
+        &.active {
+            background-color: $orange;
+            color: $white;
+        }
+    }
+
+    &__wrap {
+        p {
+            @include font(1.8, 1.9);
+            transition: $transition;
+
+            @include tablet {
+                @include font(2.2, 2.8);
+            }
+
+            &.active {
+                color: $orange;
+            }
+        }
+    }
+
+    &__content {
+        p {
+            @include font(1.6, 1.9);
+            padding-top: 1rem;
+
+            @include tablet {
+                @include font(1.8, 2.7);
+                padding-top: 1.4rem;
+            }
+        }
+
+        max-height: 0;
+        overflow: hidden;
+        transition: $transition;
+    }
+}
+
+.card-dec {
+    background-color: #FAF2D3;
+    border-radius: 2.5rem;
+    padding: 2.2rem 2.2rem 4.3rem 2.2rem;
+    @include column;
+    gap: 1.6rem;
+
+    @include tablet {
+        padding: 4.8rem 10.7rem 4.3rem 10.7rem;
+        flex-direction: row;
+        gap: 4.8rem;
+        align-items: center;
+    }
+
+    &__title {
+        @include font(2.4, 3.8);
+    }
+
+    &__text {
+        @include font(1.7, 1.8);
+        padding-top: 1rem;
+    }
+
+    &__foot {
+        @include font(1.5, 1.5);
+        color: #B69F78;
+        padding-top: 1rem;
+
+        @include tablet {
+            padding-top: 2.4rem;
+        }
+    }
+}
+
+.card-cli {
+    border-radius: 1.5rem;
+    background-color: $white;
+    height: 36.6rem !important;
+    @include column;
+    justify-content: space-between;
+    width: 80vw;
+
+    @include tablet {
+        height: 32.3rem !important;
+        width: auto;
+    }
+
+    &__content {
+        background-color: $white;
+        border-radius: 1.5rem;
+        padding: 1.6rem 1.8rem;
+
+        @include tablet {
+            padding: 1.6rem 2.4rem;
+        }
+
+        & p:last-child {
+            @include font(1.7, 2);
+            margin-top: 1.2rem;
+        }
+    }
+
+    &__header {
+        display: flex;
+        gap: 1.6rem;
+        align-items: center;
+        margin-bottom: 1.2rem;
+
+        @include tablet {
+            gap: 2.4rem;
+        }
+    }
+
+    &__title {
+        & p:first-child {
+            @include font(1.7, 3.5);
+
+            @include tablet {
+                @include font(2.4, 2.4);
+            }
+        }
+
+        & p:nth-child(2) {
+            @include font(1.4, 1.4);
+
+            @include tablet {
+                @include font(1.6, 3.5);
+            }
+        }
+    }
+
+    &__link {
+        @include font(1.6, 1.6);
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    &__hidden {
+        display: none;
+    }
+
+    &__button {
+        width: 100%;
+        height: 5.3rem;
+        @include center;
+        background-color: #FFEFD3;
+        border-radius: 0 0 1.5rem 1.5rem;
+        @include medium;
+        @include font(1.6, 1.6);
+    }
+}
+
+.card-case {
+    @include column;
+    gap: 1.5rem;
+
+    @include tablet {
+        flex-direction: row-reverse;
+        gap: 9rem;
+        align-items: start;
+    }
+
+    &__image {
+        @include center;
+        background-color: $dark;
+        padding: 2.5rem 8.1rem;
+        position: relative;
+    }
+
+    &__decor {
+        position: absolute;
+        width: 4.7rem;
+        height: auto;
+        bottom: 0;
+        transform: translateY(50%);
+    }
+
+    &__title {
+
+        @include center;
+        height: 4.4rem;
+        background-color: $white;
+
+        @include tablet {
+            height: auto;
+            @include column;
+            gap: 7rem;
+            padding: 3.5rem 5rem 2.4rem 5rem;
+            text-align: center;
+        }
+
+        & p {
+            @include font(1.6, 2.2);
+
+            @include tablet {
+                @include font(1.8, 2.2);
+            }
+        }
+
+        & p:first-child {
+            @include tablet {
+                @include font(2, 2.7);
+            }
+        }
+    }
+
+    &__content {
+
+        & p:first-child {
+            @include font(1.9, 2);
+            margin-bottom: 1.5rem;
+
+            @include tablet {
+                @include font(4, 4);
+                margin-bottom: 2.7rem;
+            }
+        }
+
+        & p {
+            @include font(1.7, 2.1);
+            margin-bottom: 2rem;
+
+            @include tablet {
+                @include font(1.8, 2.6);
+                margin-bottom: 2.7rem;
+            }
+        }
+
+        & p:last-child {
+            @include font(1.7, 2.1);
+            margin-bottom: 0;
+
+            @include tablet {
+                @include font(1.8, 2.6);
+                margin-bottom: 0;
+            }
+        }
+    }
+}

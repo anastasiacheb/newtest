@@ -1,0 +1,204 @@
+@use "../abstracts" as *;
+
+.header{
+    padding-top: 5.7rem;
+    overflow: hidden;
+    position: relative;
+
+    @include tablet {
+        //max-width: 117rem;
+        //margin: auto;
+        padding-top: 9.6rem;
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 100;
+        @include tablet {
+            max-width: 117rem;
+            margin: auto;
+        }
+    }
+
+    &__title {
+        padding: 0 2.2rem;
+        @include column;
+        gap: 0.4rem;
+        padding-top: 2rem;
+
+        @include tablet {
+            gap: 1rem;
+            padding-top: 15rem;
+        }
+
+        & h2 {
+            @include bold;
+            @include font(1.8, 1.9);
+
+            @include tablet {
+                @include font(3, 3.6);
+            }
+        }
+
+        & p:nth-child(3){
+            @include font(1.8, 1.9);
+
+            @include tablet {
+                @include font(2.4, 1.8);
+                padding: 2rem 0 5.6rem 0;
+            }
+        }
+
+        & p:nth-child(4){
+            @include font(2.5, 3.6);
+            @include bold;
+
+            @include tablet {
+                @include font(2.4, 1.8);
+            }
+
+            & span {
+                @include semibold;
+                @include font(1.7, 1.8);
+
+                @include tablet {
+                    @include font(1.4, 1.8);
+                }
+            }
+        }
+    }
+
+    &__button {
+        @include column;
+        //padding-top: 1rem;
+        gap: 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 1.2rem;
+            padding-top: 1rem;
+        }
+
+        & button {
+            height: 5rem;
+            @include semibold;
+
+            @include tablet {
+                height: 5.7rem;
+                width: 25rem;
+            }
+        }
+
+        & span {
+            @include regular;
+            text-decoration: line-through;
+            color: $lightgray;
+        }
+    }
+
+    &__content {
+        padding: 0 3.5rem 0 2.2rem  !important;
+        padding-top: 6.8rem !important;
+        padding-bottom: 3.8rem !important;
+
+        @include tablet {
+            padding: 0 2.2rem !important;
+            padding-top: 19.7rem !important;
+            padding-bottom: 8rem !important;
+            max-width: 117rem;
+            margin: auto;
+        }
+    }
+
+    &__link {
+        width: 19.6rem;
+        margin: auto;
+        @include center;
+        display: block;
+        padding: 1.5rem 5.5rem;
+    }
+
+    &__btn {
+        margin: auto;
+        margin-top: 2.2rem;
+        margin-bottom: 2.8rem;
+    }
+
+    &__image {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    &__image1 {
+        height: 35rem;
+        width: auto;
+        transform: scaleX(-1);
+        right: -9rem;
+        top: 2rem;
+
+        @include tablet {
+            height: 72rem;
+            width: auto;
+            top: 0rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto 0 45%;
+            //transform: scaleX(-1) translateX(-10rem);
+        }
+    }
+
+    &__image2 {
+        height: 23rem;
+        width: auto;
+        transform: scaleX(-1) rotate(20deg);
+        right: -10rem;
+        top: 10rem;
+        z-index: 200;
+
+        @include tablet {
+            width: 62rem;
+            height: auto;
+            top: -15rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto 0 68%;
+        }
+    }
+
+    &__image3 {
+        width: 40rem;
+        height: auto;
+        top: 30rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto 0 70%;
+    }
+
+    &__image4 {
+        width: 25rem;
+        height: auto;
+        top: -7rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto 0 68%;
+    }
+
+    &__image5 {
+        width: 30rem;
+        height: auto;
+        transform:  rotate(45deg);
+        top: 60rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto 0 55%;
+    }
+
+    &__image6 {
+        width: 20rem;
+        height: auto;
+        top: 75rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto 0 75%;
+    }
+}

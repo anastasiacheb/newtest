@@ -1,0 +1,1071 @@
+@use "../abstracts" as *;
+
+.section {
+    padding: 0 2.2rem;
+
+    @include tablet {
+        max-width: 117rem;
+        margin: auto;
+    }
+}
+
+.section-one {
+    background: $background_light;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    position: relative;
+    //overflow: hidden;
+
+    @include tablet {
+        padding-top: 9rem;
+        padding-bottom: 0;
+    }
+
+    &__image {
+        position: sticky;
+        top: 10rem;
+        align-self: start;
+        right: -20rem;
+        bottom: 0;
+
+        & img {
+            width: 49vw;
+            height: auto;
+            //position: sticky;            
+            //left: 55vw;
+            object-fit: contain;
+            overflow: hidden;
+            transition: $transition;
+            opacity: 1;
+
+            &.invisible {
+                opacity: 0;
+            }
+        }
+
+        & img:last-child {
+            position: absolute;
+            top: 0;
+            width: 55vw;
+            right: 0;
+        }
+    }
+
+    & h3 {
+        @include font(1.9, 2.2);
+
+        @include tablet {
+            @include font(3.3, 4);
+            padding-bottom: 2rem
+        }
+    }
+
+    & h4 {
+        @include font(1.7, 2.1);
+
+        @include tablet {
+            @include font(2.5, 3);
+        }
+    }
+
+    & h2 {
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+
+    &__content {
+        @include column;
+        gap: 1.6rem;
+        padding-top: 1.6rem;
+        max-width: 58rem;
+
+        @include tablet {
+            padding-top: 5rem;
+            min-width: 50vw;
+            padding-bottom: 6rem;
+            padding-left: 2.2rem;
+        }
+
+        @include desktop {
+            min-width: 58rem;
+        }
+    }
+
+    &__wrap {
+        padding: 0 2.2rem;
+
+    @include tablet {
+        max-width: 117rem;
+        margin-right: 0;
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+
+    }
+
+    @include desktop {
+        margin-left: calc(100vw - 50vw - 58rem);
+    }
+    }
+}
+
+.section-blur {
+    background: url('../../../public/images/i(11)1.png') no-repeat;
+    background-position: top 0% left 50%;
+    display: block;
+    height: auto;
+    //backdrop-filter: blur(300px);
+    //-webkit-backdrop-filter: blur(300px);
+
+    &__wrap {
+        backdrop-filter: blur(300px);
+        display: block;
+    }
+
+    &__content {
+        padding: 4rem 2.2rem;
+        backdrop-filter: blur(300px);
+
+        @include tablet {
+            padding: 12.7rem 2.2rem;
+        }
+
+        & p {
+            @include font(1.9, 2.3);
+            max-width: 76rem;
+            margin: auto;
+            text-align: center;
+
+            @include tablet {
+                @include font(2.8, 3.7);
+            }
+        }
+    }
+}
+
+.section-comp {
+    background-color: $background_light;
+    padding: 3.6rem 0 4.8rem 0;
+
+    @include tablet {
+        padding: 10rem 0 9.6rem 0;
+    }
+
+    & h2 {
+        padding: 0 2.2rem;
+        max-width: 33rem;
+
+        @include tablet {
+            max-width: 100rem;
+        }
+    }
+
+    &__container {
+        padding: 0;
+    }
+
+    &__content {
+        overflow: scroll;
+
+        @include tablet {
+            overflow: hidden;
+        }
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 80vw 80vw;
+        padding: 0 2.2rem;
+
+        @include tablet {
+            column-gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__title {
+        display: grid;
+        grid-template-columns: 80vw 80vw;
+        background-color: $white;
+        padding: 0 2.2rem;
+        margin-top: 2rem;
+
+        @include tablet {
+            padding: 2.2rem 1rem;
+            column-gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 4rem;
+        }
+    }
+
+    &__header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        text-transform: uppercase;
+        background-color: $white;
+        padding: 1.6rem 0;
+
+        @include tablet {
+            padding: 0;
+        }
+
+        & h3 {
+            @include font(1.8, 2.1);
+
+            @include tablet {
+                @include font(2.5, 5.9);
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        gap: 1.6rem;
+        align-items: start;
+
+        &:first-child .section-comp__inner {
+            border: none
+        }
+
+        &:nth-child(2) .section-comp__inner {
+            border: none
+        }
+
+        & img {
+            object-fit: contain;
+        }
+    }
+
+    &__icon {
+        padding-top: 2.8rem
+    }
+
+    &__inner {
+        @include column;
+        gap: 0.4rem;
+        gap: none;
+        padding: 2rem 0;
+        border-top: 1px solid #E9E9E9;
+
+        &:first-child {
+            border: none
+        }
+        
+        & h4 {
+            @include font(1.7, 1.9);
+
+            @include tablet {
+                @include font(2.2, 5);
+            }
+        }
+    }
+
+    &__button {
+        @include column;
+        gap: 2rem;
+        padding: 0 2.2rem;
+
+        @include tablet {
+            flex-direction: row;
+            @include center;
+        }
+    }
+}
+
+.section-serv {
+    & h2 {
+        text-align: center;
+        padding-top: 3.2rem;
+
+        @include tablet {
+            padding-top: 7.3rem;
+        }
+    }
+    &__content {
+        padding: 3.6rem 0 5.5rem;
+
+        @include tablet {
+            padding: 4.4rem 0 6.6rem;
+        }
+    }
+}
+
+.section-cont {
+
+    position: relative;
+    overflow: hidden;
+
+    &__image {
+        position: absolute;
+    }
+
+    &__image1 {
+        top: 25rem;
+        width: 25rem;
+        height: auto;
+        right: -5rem;
+
+        @include tablet {
+            top: 70rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 40rem;
+            height: auto;
+            z-index: 1000;
+            transform: translateX(35rem);
+        }
+        
+    }
+
+    &__image2 {
+        top: 97rem;
+        width: 15rem;
+        height: auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateX(55rem);
+    }
+
+    &__image3 {
+        top: 80rem;
+        width: 25rem;
+        height: auto;
+        transform: rotate(20deg);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateX(65rem);
+    }
+
+    &__image4 {
+        top: 120rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 54rem;
+        height: auto;
+        z-index: 1000;
+        transform: translateX(50rem);
+    }
+
+    &__image5 {
+        transform: rotate(45deg);
+        width: 25rem;
+        height: auto;
+        top: 30rem;
+        right: 0;
+
+        @include tablet {
+            top: 140rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 40rem;
+            height: auto;
+            z-index: 1000;
+            transform: translateX(75rem) rotate(45deg);
+        }
+    }
+
+    &__image6 {
+        top: 135rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 30rem;
+        height: auto;
+        z-index: 1000;
+        transform: translateX(0rem);
+    }
+
+    &__header {
+        background-color: $dark;
+        @include font(2.9, 2.7);
+        padding: 2rem 3rem;
+
+        @include tablet {
+            @include font(3.5, 4.4);
+            text-align: center;
+            padding: 2.7rem 3rem;
+        }
+    }
+
+    &__content {
+        background: linear-gradient(180deg, #FF9900 0%, #FF7F24 100%), #FE912C;
+        padding: 4rem 0 5rem 0;
+        overflow: hidden;
+
+        & h2 {
+            @include font(2.8, 2.7);
+            padding: 0 2.2rem 4rem 2.2rem;
+
+            @include tablet {
+                @include font(4, 3.8);
+                position: absolute;
+                top: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    &__inner {
+        & p:first-child {
+            @include font(1.8, 2.2);
+        }
+
+        & a:last-child {
+            @include font(3.5, 2.2);
+            padding-top: 1rem;
+
+            @include tablet {
+                padding-top: 3rem;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    &__wrap {
+        & p:first-child {
+            @include font(1.8, 2.2);
+        }
+    }
+
+    &__links {
+        @include column;
+        gap: 2rem;
+        padding-top: 1.2rem;
+
+        @include desktop {
+            flex-direction: row;
+            gap: 3rem;
+        }
+
+        & a {
+            @include font(1.8, 2.6);
+            text-decoration: underline;
+            text-decoration-color: $white;
+            text-underline-offset: 4px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__container {
+        @include column;
+        gap: 2.6rem;
+        position: relative;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
+        }
+    }
+
+    &__cont {
+
+        @include tablet {
+            align-items: start;
+        }
+
+        @include desktop {
+            align-items: end;
+        }
+    }
+
+    &__foot {
+        & h3 {
+            @include font(2.2, 2.4);
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        width: 30rem;
+        padding-bottom: 1em;
+
+        @include desktop {
+            width: 35rem;
+        }
+
+        & p {
+            @include font(1.8, 2.1);
+        }
+
+        & p:first-child {
+            text-decoration: underline;
+            text-decoration-color: $white;
+            text-underline-offset: 4px;
+        }
+    }
+}
+
+.section-answ {
+    padding: 4rem 0 6rem 0;
+
+    @include tablet {
+        padding: 10rem 0;
+    }
+    &__content {
+        @include column;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 2.4rem;
+            margin-top: 6rem;
+        }
+    }
+
+    &__wrap {
+        @include column;
+        gap: 1rem;
+        flex-basis: 0;
+        flex-grow: 1;
+
+        @include tablet {
+            gap: 1.8rem;
+        }
+    }
+
+    &__button {
+        margin-top: 0.7rem;
+        width: 100%;
+
+        @include tablet {
+            margin-top: 2rem;
+        }
+
+        & button {
+            margin-left: auto;
+        }
+    }
+}
+
+.section-dec {
+    position: relative;
+    margin: 5rem auto;
+
+    & h2 {
+        text-align: center;
+    }
+
+    @include tablet {
+        margin: 10rem auto 16rem auto;
+    }
+
+    &__wrap {
+        margin: 2rem 0 4.5rem 0;
+
+        @include tablet {
+            margin: 5rem 0 1.6rem 0;
+        }
+    }
+
+    &__buttons {
+        position: absolute;
+        bottom: 8rem;
+        left: 50%;
+        display: flex;
+        gap: 1rem;
+        transform: translateX(-50%);
+        z-index: 1000;
+
+        @include tablet {
+            position: static;
+        }
+
+        & button {
+            position: static;
+        }
+    }
+
+    &__btns {
+        & button:first-child {
+            bottom: 0;
+        }
+    }
+
+    &__left {
+        top: 420px;
+        left: 5rem;
+    }
+
+    &__right {
+        top: 420px;
+        right: 5rem;
+    }
+
+    & .swiper-button-prev:after {
+        content: none;
+    }
+    
+    & .swiper-button-next:after {
+        content: none;
+    }
+}
+
+.section-cli {
+    background-color: $dark;
+    padding: 3.4rem 0 5.5rem 0;
+    position: relative;
+    overflow: hidden;
+
+    &__image {
+        position: absolute;
+    }
+
+    &__image1 {
+        top: 220rem;
+        left: 5rem;
+        width: 88rem;
+        height: auto;
+        z-index: 1000;
+    }
+
+    &__image2 {
+        top: 85rem;
+        width: 71rem;
+        height: auto;
+        right: -10rem;
+    }
+
+    &__image3 {
+        top: 385rem;
+        width: 50rem;
+        height: auto;
+        transform: rotate(20deg);
+        right: 20rem
+    }
+
+    & h2 {
+        text-align: center;
+    }
+
+    @include tablet {
+        padding: 8.6rem 0 9.7rem 0;
+    }
+
+    &__wrap {
+        margin-top: 3rem;
+
+        @include tablet {
+            margin-top: 7rem;
+        }
+    }
+
+    &__pag {
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+        justify-content: center;
+        margin: 2.2rem 0;
+
+        &.swiper-pagination {
+            position: static;
+
+            
+        }
+
+        & .swiper-pagination-bullet {
+            width: 1.4rem !important;
+            height: 1.4rem !important;
+            background-color: $white;
+            border-radius: 100%;
+            opacity: 1;
+        }
+
+        & .swiper-pagination-bullet-active {
+            background-color: $orange;
+        }
+    }
+
+    &__dot {
+        width: 1.4rem;
+        height: 1.4rem;
+        background-color: $white;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    &__button {
+        margin: auto;
+
+        &.swiper-button-next {
+            position: static;
+        }
+
+        &.swiper-button-next:after {
+            content: none;
+        }
+    }
+
+    
+}
+
+.section-case {
+    padding-top: 4.4rem;
+    padding-bottom: 4.4rem;
+    position: relative;
+
+    @include tablet {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    & h2 {
+        text-align: center;
+    }
+
+    &__wrap {
+        margin-top: 1.7rem;
+
+        @include tablet {
+            margin-top: 10rem;
+            max-width: 90rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    & .swiper-button-prev:after {
+        content: none;
+    }
+    
+    & .swiper-button-next:after {
+        content: none;
+    }
+
+    &__left {
+        top: 610px;
+        left: 0;
+    }
+
+    &__right {
+        top: 610px;
+        right: 0;
+    }
+}
+
+.section-geo {
+    &__header {
+        background-color: $dark;
+        padding: 1.7rem;
+
+        @include tablet {
+            padding: 2.7rem 0;
+        }
+    }
+
+    &__heading {
+        @include bold;
+        @include font(3.5, 4.4);
+        width: max-content;
+    }
+
+}
+
+.swiper6 {
+    & .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+}
+
+.section-geo {
+    overflow-y: visible; 
+    overflow-x: hidden;   
+
+    &__header {
+        position: relative;
+        z-index: 500;
+    }
+
+    &__wrap {
+        position: relative;
+    }
+
+
+    &__content {
+        background-color: $background_light;
+        padding: 2.6rem 0 4.3rem 0;
+
+        @include tablet {
+            padding: 10rem 0 8.7rem 0;
+        }
+    }
+
+    &__list {
+        background-color: $white;
+        padding: 1.8rem;
+        @include column;
+        gap: 1.2rem;
+
+        @include tablet {
+            width: 19rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        & p {
+            @include medium;
+            @include font(1.6, 2.9);
+            text-transform: uppercase;
+
+            @include tablet {
+                @include font(1.1, 2.9);
+            }
+        }
+
+        & p:nth-child(2) {
+            padding-left: 1rem;
+        }
+
+        & p:nth-child(3) {
+            overflow: hidden;
+            color: #DED9D2;
+        }
+
+        & p:nth-child(4) {
+            min-width: max-content;
+        }
+    }
+
+    &__map {
+        position: absolute;
+        width: 82rem;
+        height: auto;
+        object-fit: contain;
+        left: 25rem;
+        top: -15rem;
+    }
+}
+
+.swiper7 {
+
+    @include tablet {
+        max-width: 53rem;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    &-slide  {
+        background-color: $background;
+        @include font(1.7, 2.1);
+    }
+
+    &-pag {
+        overflow-x: scroll;
+        z-index: 1000;
+        position: relative;
+
+        @include tablet {
+            overflow-x: hidden;
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        position: static;
+        gap: 2.2rem;
+        overflow-x: scroll;
+        width: max-content !important;
+        position: relative;
+
+        @include tablet {
+            overflow-x: hidden;
+        }
+
+        & .swiper-pagination-bullet-active {
+            border-bottom: 3px solid $orange;
+            color: $black;
+        }
+
+        & span {
+            width: max-content !important;
+            @include medium;
+            @include font(1.7, 2.6);
+            height: auto;
+            background: none;
+            border-radius: 0;
+            padding-bottom: 0.8rem;
+            padding-top: 0.4rem;
+            color: $lightbrown;
+            opacity: 1;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &-wrapper {
+        margin-top: 2.4rem;
+    }
+}
+
+.swiper8 {
+    padding-top: 0.8rem;
+    position: relative;
+
+    @include tablet {
+        padding-top: 6rem;
+    }
+    &-slide  {
+        background-color: $background;
+        padding-top: 1.3rem;
+        @include tablet {
+            padding-top: 8rem;
+        }
+        @include font(1.7, 2.1);
+
+        & > p:first-child {
+            @include bold;
+            @include font(1.8, 3);
+        }
+
+        & > p:nth-child(2) {
+            color: $lightbrown;
+            @include font(1.4, 2.4);
+            margin-bottom: 2.2rem;
+        }
+
+        & > img {
+            position: absolute;
+            width: 80rem;
+            height: auto;
+            bottom: 0;
+            object-fit: contain;
+            right: 0;
+            //z-index: 100;
+        }
+
+        & > p:nth-child(4) {
+            @include font(3, 3);
+            margin-top: 1.2rem;
+        }
+
+        & > p:nth-child(5) {
+            @include font(1.8, 2.4);
+            margin-top: 4rem;
+            margin-bottom: 12rem;
+        }
+    }
+
+    &-pag {
+        overflow-x: scroll;
+
+        @include tablet {
+            overflow-x: hidden;
+        }
+
+        @include tablet {
+            margin: auto;
+            width: max-content;
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        position: static;
+        gap: 1.2rem;
+        overflow-x: auto;
+        width: max-content !important;
+
+        @include tablet {
+            overflow-x: hidden;
+        }
+
+        & div {
+            width: max-content !important;
+            @include medium;
+            @include font(1.7, 2.6);
+            height: auto;
+            background: none;
+            border-radius: 0;
+            padding-bottom: 0.8rem;
+            color: $lightbrown;
+            opacity: 1;
+
+            & p {
+                padding: 1rem 0 0 2.4rem;
+            }
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &__bullet {
+        display: flex;
+
+        & p {
+            display: none;
+        }
+
+        &.swiper-pagination-bullet-active {
+            color: $black;
+
+            @include tablet {
+                & p {
+                    display: block;
+                }
+            }
+
+            & img {
+                background-color: $white;
+            }
+        }
+    } 
+
+    &-button-next {
+        position: absolute;
+        bottom: 0 !important;
+        left: 0;
+        width: max-content;
+        margin: 0;
+        height: max-content;
+        top: unset !important;
+        margin-bottom: 5.6rem;
+    }
+
+}
+
+.section-star {
+    padding-top: 3.4rem;
+    padding-bottom: 5.8rem;
+
+    @include tablet {
+        padding-top: 13rem;
+        padding-bottom: 0;
+
+        & h2 {
+            text-align: center;
+        }
+    }
+}
+
+.nik {
+    width: 56rem !important;
+}
+
+.gir {
+    width: 70rem !important;
+}
+
+.gal {
+    padding-left: 2rem;
+}

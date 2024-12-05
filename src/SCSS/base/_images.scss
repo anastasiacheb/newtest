@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+
+
+.image {
+    width: 7.4rem;
+    height: 7rem;
+}
+.avatar {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    background-color: $muteorange;
+
+    &_active {
+        background-color: $white;
+    }
+}
+
+.avatar_s {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+
+    @include tablet {
+        width: 10.4rem;
+        height: 10.4rem;
+    }
+}
+
+.avatar_m {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100%;
+
+    @include tablet {
+        width: 25rem;
+        height: 25rem;
+    }
+}
+
+.avatar_l {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 100%;
+    object-position: 65% 50%;
+}
