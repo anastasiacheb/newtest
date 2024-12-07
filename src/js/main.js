@@ -153,13 +153,19 @@ let popup5Close = document.querySelector(".close_popup5");
 for (let i = 0; i < popup5Button.length; i++) {
   popup5Button[i].addEventListener("click", () => {
     popup5.classList.remove("invisible");
-    swiper12.slideTo(i, false,true);
+    //swiper12.reInit();
+    //swiper12.update();
+    swiper12.slideTo(i, true,true);
+    swiper12.update();
+    //swiper12.initialSlide = i;
   })
 }
 
 popup5Close.addEventListener("click", () => {
   popup5.classList.add("invisible");
-  swiper12.slideTo(1, false,true);
+  //swiper12.slideTo(0, false,true);
+  swiper12.update();
+  //swiper12.reInit();
 })
 
 popup5.addEventListener("click", enableScroll);
@@ -587,8 +593,17 @@ const swiper12 = new Swiper('.swiper12', {
     for (let i = 0; i < pags.length; i++) {
       pags[i].addEventListener("click", () => {
         
-        let heightAuto = pags[i].parentElement.parentElement.parentElement.parentElement.clientHeight;
-        alert(heightAuto);
+        let slidesAuto = pags[i].parentElement.parentElement.nextElementSibling.querySelectorAll(".swiper7-slide");
+        let heightAuto = slidesAuto[i].clientHeight + 371;
+        //alert(pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.outerHTML);
+        pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.transitionDuration = "300ms";
+        //pags[i].parentElement.parentElement.parentElement.parentElement.style.transitionDuration = "0ms";
+        pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.height = heightAuto + "px";
+        pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.backfaceVisibility = "hidden";
+
+        //pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.transitionDuration = "200ms";
+        //pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.transitionDuration = "0ms";
+        //pags[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.transitionDelay = "0ms";
        })
   }}
   
