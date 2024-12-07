@@ -5,3 +5,7 @@
 @mixin desktop {
     @media screen and (min-width: 1120px) { @content }
 };
+
+@mixin screen($width) {
+    @media screen and (min-width: $width) { @content }
+};

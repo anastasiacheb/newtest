@@ -4,17 +4,64 @@
     padding-top: 5.7rem;
     overflow: hidden;
     position: relative;
+    
+    &__buttons {
+        position: relative;
+        z-index: 1000;
+        transition: $transition;
+        opacity: 0;
+        transform: translateY(30rem);
 
-    @include tablet {
-        //max-width: 117rem;
-        //margin: auto;
+        & button {
+            position: absolute!important;
+        }
+
+        & button::after {
+            content: "";
+        }
+
+        & button:first-child {
+            right: 0;
+            left: 0;
+            margin: auto;
+            margin-top: 6rem;
+
+            @include screen(1050px) {
+                margin-right: 63%;
+                margin-top: 0;
+            }
+            
+
+            &.swiper-button-prev.swiper-button-disabled {
+                display: none;
+            }
+        }
+
+        & button:last-child {
+            right: 0;
+            left: 0;
+            margin: auto;
+            margin-bottom: 6rem;
+            //margin-left: 63%;
+
+            @include screen(1050px) {
+                margin-left: 63%;
+                margin-bottom: 0;
+            }
+            &.swiper-button-next.swiper-button-disabled {
+                display: none;
+            }
+        }
+    }
+
+    @include screen(570px) {
         padding-top: 9.6rem;
     }
 
     &__wrap {
         position: relative;
         z-index: 100;
-        @include tablet {
+        @include screen(570px) {
             max-width: 117rem;
             margin: auto;
         }
@@ -26,7 +73,7 @@
         gap: 0.4rem;
         padding-top: 2rem;
 
-        @include tablet {
+        @include screen(570px) {
             gap: 1rem;
             padding-top: 15rem;
         }
@@ -34,34 +81,45 @@
         & h2 {
             @include bold;
             @include font(1.8, 1.9);
+            padding-top: 1rem;
+            width: 20rem;
 
-            @include tablet {
+            @include screen(570px) {
                 @include font(3, 3.6);
+                padding-top: 0;
+                width: auto;
             }
         }
 
         & p:nth-child(3){
             @include font(1.8, 1.9);
+            padding-top: 1rem;
+            width: 20rem;
 
-            @include tablet {
+            @include screen(570px) {
                 @include font(2.4, 1.8);
                 padding: 2rem 0 5.6rem 0;
+                width: auto;
             }
         }
 
         & p:nth-child(4){
             @include font(2.5, 3.6);
             @include bold;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
 
-            @include tablet {
+            @include screen(570px) {
                 @include font(2.4, 1.8);
+                padding-top: 0;
+                padding-bottom: 0;
             }
 
             & span {
                 @include semibold;
                 @include font(1.7, 1.8);
 
-                @include tablet {
+                @include screen(570px) {
                     @include font(1.4, 1.8);
                 }
             }
@@ -73,7 +131,7 @@
         //padding-top: 1rem;
         gap: 1rem;
 
-        @include tablet {
+        @include screen(570px) {
             flex-direction: row;
             gap: 1.2rem;
             padding-top: 1rem;
@@ -83,7 +141,7 @@
             height: 5rem;
             @include semibold;
 
-            @include tablet {
+            @include screen(570px) {
                 height: 5.7rem;
                 width: 25rem;
             }
@@ -97,11 +155,15 @@
     }
 
     &__content {
-        padding: 0 3.5rem 0 2.2rem  !important;
+        padding: 0 2.2rem  !important;
         padding-top: 6.8rem !important;
         padding-bottom: 3.8rem !important;
 
-        @include tablet {
+        &:hover .header__buttons {
+            opacity: 1;
+        }
+
+        @include screen(570px) {
             padding: 0 2.2rem !important;
             padding-top: 19.7rem !important;
             padding-bottom: 8rem !important;
@@ -130,11 +192,16 @@
     }
 
     &__image1 {
-        height: 35rem;
+        height: 40rem;
         width: auto;
         transform: scaleX(-1);
         right: -9rem;
-        top: 2rem;
+        top: 9rem;
+
+        @include screen(570px) {
+            height: 60rem;
+            right: -20rem;
+        }
 
         @include tablet {
             height: 72rem;
@@ -148,12 +215,17 @@
     }
 
     &__image2 {
-        height: 23rem;
+        height: 27rem;
         width: auto;
         transform: scaleX(-1) rotate(20deg);
         right: -10rem;
-        top: 10rem;
+        top: 20rem;
         z-index: 200;
+
+        @include screen(570px) {
+            height: 40rem;
+            right: -20rem;
+        }
 
         @include tablet {
             width: 62rem;

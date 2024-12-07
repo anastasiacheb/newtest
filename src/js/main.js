@@ -59,10 +59,6 @@ popup1Close.addEventListener("click", () => {
   popup1.classList.add("invisible");
 })
 
-popup1.addEventListener("click", () => {
-  popup1.classList.add("invisible");
-})
-
 popup1Wrap.addEventListener("click", (e) => {
   e.stopPropagation();
 })
@@ -89,9 +85,7 @@ popup2Close.addEventListener("click", () => {
   popup2.classList.add("invisible");
 })
 
-popup2.addEventListener("click", () => {
-  popup2.classList.add("invisible");
-})
+
 
 popup2Wrap.addEventListener("click", (e) => {
   e.stopPropagation();
@@ -118,9 +112,7 @@ popup3Close.addEventListener("click", () => {
   popup3.classList.add("invisible");
 })
 
-popup3.addEventListener("click", () => {
-  popup3.classList.add("invisible");
-})
+
 
 popup3Wrap.addEventListener("click", (e) => {
   e.stopPropagation();
@@ -150,6 +142,30 @@ popup4Close.addEventListener("click", () => {
 popup4Close.addEventListener("click", enableScroll);
 for (let i = 0; i < popup4Button.length; i++) {
   popup4Button[i].addEventListener("click", disableScroll)
+}
+
+
+let popup5Button = document.querySelectorAll(".button_popup5");
+let popup5 = document.querySelector(".popup5");
+let popup5Wrap = document.querySelector(".popup5__wrap")
+let popup5Close = document.querySelector(".close_popup5");
+
+for (let i = 0; i < popup5Button.length; i++) {
+  popup5Button[i].addEventListener("click", () => {
+    popup5.classList.remove("invisible");
+    swiper12.slideTo(i, false,true);
+  })
+}
+
+popup5Close.addEventListener("click", () => {
+  popup5.classList.add("invisible");
+  swiper12.slideTo(1, false,true);
+})
+
+popup5.addEventListener("click", enableScroll);
+popup5Close.addEventListener("click", enableScroll);
+for (let i = 0; i < popup5Button.length; i++) {
+  popup5Button[i].addEventListener("click", disableScroll)
 }
 
 let inputName = document.querySelector(".input-name");
@@ -286,11 +302,15 @@ const swiper1 = new Swiper('.swiper1', {
     // Optional parameters
     //direction: 'vertical',
     //loop: true,
-    slidesPerView: 1,
+    slidesPerView: 1.1,
     spaceBetween: 10,
     breakpoints: {
         // when window width is >= 640px
         768: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        1050: {
           slidesPerView: 3,
           spaceBetween: 30
         }
@@ -298,8 +318,8 @@ const swiper1 = new Swiper('.swiper1', {
 
       // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        //prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next10',
+        prevEl: '.swiper-button-prev10',
       },
   
     // If we need pagination
@@ -314,6 +334,44 @@ const swiper1 = new Swiper('.swiper1', {
       el: '.swiper-scrollbar',
     },*/
   });
+
+  const swiper11 = new Swiper('.swiper11', {
+    // Optional parameters
+    //direction: 'vertical',
+    //loop: true,
+    slidesPerView: 1.1,
+    spaceBetween: 10,
+    breakpoints: {
+        // when window width is >= 640px
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        1050: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+
+      // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next11',
+        prevEl: '.swiper-button-prev11',
+      },
+  
+    // If we need pagination
+   /* pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },*/
+  });
+
 
   const swiper2 = new Swiper('.swiper2', {
     // Optional parameters
@@ -351,6 +409,7 @@ const swiper1 = new Swiper('.swiper1', {
   const swiper3 = new Swiper('.swiper3', {
     // Optional parameters
     loop: true,
+    autoHeight: true,
   
     // Navigation arrows
     navigation: {
@@ -361,11 +420,20 @@ const swiper1 = new Swiper('.swiper1', {
 
   const swiper4 = new Swiper('.swiper4', {
     // Optional parameters
-    slidesPerView: 1.1,
+    slidesPerView: 1.2,
       spaceBetween: 14,
 
       breakpoints: {
         768: {
+          slidesPerView: 2,
+          grid: {
+            rows: 2,
+            fill: "row",
+          },
+          spaceBetween: 18,
+          slidesPerGroup: 2,
+        },
+        1050: {
           slidesPerView: 3,
           grid: {
             rows: 2,
@@ -415,6 +483,8 @@ const swiper1 = new Swiper('.swiper1', {
 const slides8 = document.querySelectorAll('.swiper8-slide');
 var swiper8 = new Swiper(".swiper8", {
   effect: "fade",
+  autoHeight: true,
+  allowTouchMove: false,
   navigation: {
     nextEl: '.swiper8-button-next',
   },
@@ -423,7 +493,7 @@ var swiper8 = new Swiper(".swiper8", {
     clickable: true,
     renderBullet: function (index, className) {
       return '<div class="swiper8__bullet ' + className + '">' 
-      + '<img src="' + slides8[index].dataset.image + '" alt="avatar" class="avatar"> <p class="text_bold elem__tablet">' + slides8[index].dataset.name + '</p> </div>'
+      + '<img src="' + slides8[index].dataset.image + '" alt="avatar" class="avatar avatar_center"> <p class="text_bold elem__tablet">' + slides8[index].dataset.name + '</p> </div>'
     },
   },
 });
@@ -431,13 +501,43 @@ var swiper8 = new Swiper(".swiper8", {
 const slides7 = document.querySelectorAll('.swiper7-slide');
 var swiper7 = new Swiper(".swiper7", {
   effect: "fade",
+  autoHeight: true,
   pagination: {
     el: ".swiper7-pagination",
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + slides7[index].dataset.name + "</span>";
+      return '<span class="pag pag-' + [index]+ ' ' + className + '">' + slides7[index].dataset.name + "</span>";
     },
   },
+});
+
+
+const swiper12 = new Swiper('.swiper12', {
+  // Optional parameters
+  //direction: 'vertical',
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
+  autoHeight: true,
+  
+
+    // Navigation arrows
+  navigation: {
+      nextEl: '.swiper-button-next12',
+      prevEl: '.swiper-button-prev12',
+    },
+
+  // If we need pagination
+ /* pagination: {
+    el: '.swiper-pagination',
+  },
+
+  
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },*/
 });
   
 
@@ -461,3 +561,52 @@ var swiper7 = new Swiper(".swiper7", {
           }
     })
   }
+
+  let readBtn = document.querySelectorAll(".read-more-btn");
+
+  
+  for (let i = 0; i < readBtn.length; i++) {
+    readBtn[i].addEventListener("click", () => {
+      readBtn[i].classList.add("hidden");
+      readBtn[i].previousElementSibling.classList.remove("hidden");
+      readBtn[i].previousElementSibling.previousElementSibling.classList.remove("hidden");
+      readBtn[i].previousElementSibling.previousElementSibling.previousElementSibling.classList.add("hidden");
+      //readBtn[i].parentElement.parentElement.style.height = "auto";
+      readBtn[i].parentElement.parentElement.parentElement.style.height = "auto";
+      readBtn[i].parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+      //readBtn[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+      readBtn[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+      //readBtn[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+      //readBtn[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+    })
+  }
+
+  let pageBtn = document.querySelectorAll(".swiper7-pagination");
+  for (let i = 0; i < pageBtn.length; i++) {
+    let pags = pageBtn[i].querySelectorAll("span");
+    for (let i = 0; i < pags.length; i++) {
+      pags[i].addEventListener("click", () => {
+        
+        let heightAuto = pags[i].parentElement.parentElement.parentElement.parentElement.clientHeight;
+        alert(heightAuto);
+       })
+  }}
+  
+  /*for (let i = 0; i < pageBtn.length; i++) {
+    pageBtn[i].addEventListener("click", () => {
+      //alert(pageBtn[i].parentElement.parentElement.parentElement.parentElement.outerHTML)
+      //pageBtn[i].parentElement.nextElementSibling.style.height = "auto";
+      pageBtn[i].parentElement.parentElement.parentElement.style.height = "auto";
+      let pags = pageBtn.querySelectorAll(span);
+      for (let i = 0; i < pags.length; i++) {
+        pags[i].addEventListener("click", () => {
+
+         })
+
+      //pageBtn[i].parentElement.parentElement.parentElement.parentElement.style.height = "auto";
+      /*let slidesAuto = pageBtn[i].parentElement.nextElementSibling.querySelectorAll(".swiper7-slide");
+      for (let g = 0; g < slidesAuto.length; g++) {
+        slidesAuto[g].style.height = "auto";
+      }
+    })
+  }*/

@@ -10,6 +10,7 @@
     z-index: 3000;
     opacity: 1;
     transition: opacity 1s display 0s;
+    background-color: $white;
 
     &.invisible {
         display: none;
@@ -20,7 +21,8 @@
     &__button {
         position: absolute;
         right: 1.1rem;
-        top: 1.1rem
+        top: 1.1rem;
+        border: 1px solid #E6E6E6;
     }
 
     &__wrap {
@@ -28,7 +30,7 @@
         width: 100%;
         border-radius: 2rem;
         padding: 5rem 1.7rem 2.7rem 1.7rem;
-        position: relative;
+        //position: relative;
         max-width: 44rem;
 
         @include tablet {
@@ -94,7 +96,7 @@
             margin: 1.3rem auto 1 auto;
         }
 
-        & button {
+        & a {
             @include column;
             align-items: center;
             gap: 0.4rem;
@@ -149,4 +151,37 @@
         text-align: center;
     }
 
+}
+
+.popup5 {
+    
+    &__wrap {
+        display: block;
+        height: 100vh;
+        margin-top: 0 !important;
+        position: relative;
+        @include tablet {
+            padding: 0;
+        }
+        @include center;
+    } 
+
+    &__buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+
+        & button {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    & .card-cli {
+        height: auto !important;
+    }
+
+    &__swiper {
+        max-width: 67rem !important;
+    }
 }

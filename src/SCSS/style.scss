@@ -9,10 +9,32 @@
     }
 }
 
+.elem_mobile-nav {
+    @include screen(915px) {
+        display: none;
+    }
+}
+
 .elem_tablet {
     display: none;
 
     @include tablet {
+        display: block;
+    }
+}
+
+.elem_tablet-nav {
+    display: none;
+
+    @include screen(915px) {
+        display: block;
+    }
+}
+
+.elem_tablet-one {
+    display: none;
+
+    @include screen(1050px) {
         display: block;
     }
 }
