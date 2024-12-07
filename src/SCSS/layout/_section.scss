@@ -666,7 +666,7 @@
         left: -50rem;
         width: 88rem;
         @include screen(1200px){
-            top: 220rem;
+            top: 240rem;
         left: 5rem;
         width: 88rem;
         height: auto;
@@ -681,23 +681,22 @@
         top: 100rem;
         right: -20rem;
         @include screen(1200px) {
-            top: 85rem;
-        width: 71rem;
-        
-        right: -10rem;
+            top: 90rem;
+            width: 71rem;
+            right: -10rem;
         }
         
     }
 
     &__image3 {
-        top: 450rem;
+        top: 420rem;
         width: 50rem;
         height: auto;
         transform: rotate(20deg);
         right: 0rem;
 
         @include screen(1200px) {
-            top: 385rem;
+            top: 400rem;
             right: 20rem;
         }
     }

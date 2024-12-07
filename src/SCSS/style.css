@@ -2529,7 +2529,7 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 1200px) {
   .section-cli__image1 {
-    top: 220rem;
+    top: 240rem;
     left: 5rem;
     width: 88rem;
     height: auto;
@@ -2544,13 +2544,13 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 1200px) {
   .section-cli__image2 {
-    top: 85rem;
+    top: 90rem;
     width: 71rem;
     right: -10rem;
   }
 }
 .section-cli__image3 {
-  top: 450rem;
+  top: 420rem;
   width: 50rem;
   height: auto;
   transform: rotate(20deg);
@@ -2558,7 +2558,7 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 1200px) {
   .section-cli__image3 {
-    top: 385rem;
+    top: 400rem;
     right: 20rem;
   }
 }
