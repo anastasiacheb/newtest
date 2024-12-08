@@ -23,11 +23,13 @@
     padding-top: 3rem;
     padding-bottom: 2rem;
     position: relative;
+    scroll-margin-top: 40px;
     //overflow: hidden;
 
     @include tablet {
         padding-top: 9rem;
         padding-bottom: 0;
+        scroll-margin-top: 0;
     }
 
     &__image {
@@ -335,7 +337,7 @@
     &__image {
         position: fixed;
         z-index: -1;
-        opacity: 0;
+        display: none;
     }
 
     &__image1 {
@@ -345,11 +347,12 @@
         right: 10rem;
 
         @include tablet {
-            bottom: 0;
+            bottom: -30rem;
         }
 
         @include desktop {
             right: 20%;
+            bottom: -20rem;
         }
     }
 
@@ -360,11 +363,12 @@
         right: 0;
 
         @include tablet {
-            bottom: 5rem;
+            bottom: -30rem;
             right: 10rem;
         }
 
         @include desktop {
+            bottom: -15rem;
             right: 19%;
         }
     }
@@ -377,18 +381,18 @@
         right: -10rem;
 
         @include tablet {
-            bottom: 20rem;
+            bottom:0rem;
             right: 0;
         }
 
         @include desktop {
-            bottom: 15rem;
+            bottom: 0rem;
             right: 10%;
         } 
     }
 
     &__image4 {
-        bottom: -20rem;
+        bottom: -40rem;
         width: 54rem;
         height: auto;
         //z-index: 1000;
@@ -399,7 +403,7 @@
     }
 
     &__image5 {
-        bottom: 0;
+        bottom: -15rem;
         transform: rotate(45deg);
         width: 37rem;
         height: auto;
@@ -419,7 +423,7 @@
     }
 
     &__image6 {
-        bottom: 10rem;
+        bottom: -5rem;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -581,6 +585,7 @@
 
 .section-answ {
     padding: 4rem 0 6rem 0;
+    scroll-margin-top: 40px;
 
     @include tablet {
         padding: 10rem 0;
@@ -628,6 +633,10 @@
 
     &__slider {
         position: relative;
+        margin-bottom: 5rem;
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     & h2 {
@@ -639,7 +648,7 @@
     }
 
     &__wrap {
-        margin: 2rem 0 4.5rem 0;
+        margin: 2rem 0 0 0;
 
         @include tablet {
             margin: 5rem 0 1.6rem 0;
@@ -647,8 +656,9 @@
     }
 
     &__buttons {
+        display: none;
         position: absolute;
-        bottom: 8rem;
+        bottom: 2.6rem;
         left: 50%;
         display: flex;
         gap: 1rem;
@@ -727,7 +737,8 @@
     background-color: $dark;
     padding: 3.4rem 0 5.5rem 0;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
+    scroll-margin-top: 40px;
 
     &__wrap {
         padding-right: 2.2rem;
@@ -739,52 +750,41 @@
         }
     }
 
-    &__card {
-        max-height: calc(100vh - 7.2rem - 3rem - 1.5rem);
-    }
-
     &__image {
         position: fixed;
-        opacity: 0;
+        display: none;
     }
 
     &__image1 {
         top: 20rem;
         height: auto;
-        left: -50rem;
+        left: 0;
+        right: 0;
+        margin: auto;
         width: 88rem;
-        @include screen(1200px){
-        left: 5rem;
-        width: 88rem;
-        height: auto;
         z-index: -1;
-        }
-        
+        transform: translateX(-50%)
     }
 
     &__image2 {
         height: auto;
         width: 71rem;
-        top: 0;
-        right: -20rem;
-        @include screen(1200px) {
-            top: 0;           
-             width: 71rem;
-            right: -10rem;
-        }
-        
+        top: -20rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateX(100%);
+
     }
 
     &__image3 {
-        top: 100%;        
+        top: 80rem;        
         width: 50rem;
         height: auto;
-        transform: rotate(20deg);
-        right: 0rem;
-
-        @include screen(1200px) {
-            right: 20rem;
-        }
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateX(100%);
     }
 
     & h2 {
@@ -1272,7 +1272,6 @@
     @include screen(1100px) {
         width: 70rem !important;
     }
-    
 }
 
 .gal {

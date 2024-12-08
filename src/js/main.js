@@ -29,9 +29,14 @@ for (let i = 0; i < navLink.length; i++) {
 
 let telMenu = document.querySelector(".nav__telephone");
 let telBurger = document.querySelector(".nav__contact");
+let telBurger2 = document.querySelector(".footer__contact");
 let telClose = document.querySelector(".nav__close-tel");
 
 telBurger.addEventListener("click", () => {
+  telMenu.classList.remove("invisible");
+})
+
+telBurger2.addEventListener("click", () => {
   telMenu.classList.remove("invisible");
 })
 
@@ -40,6 +45,7 @@ telClose.addEventListener("click", () => {
 })
 
 telBurger.addEventListener("click", disableScroll);
+telBurger2.addEventListener("click", disableScroll);
 telClose.addEventListener("click", enableScroll);
 
 var rellax = new Rellax('.rellax');
@@ -267,6 +273,10 @@ for (let i = 0; i < footerLink.length; i++) {
 footerBurger.addEventListener("click", disableScroll);
 footerClose.addEventListener("click", enableScroll);
 
+for (let i = 0; i < footerLink.length; i++) {
+  footerLink[i].addEventListener("click", enableScroll);
+}
+
 let scrollButton = document.querySelector(".scrolltop");
 
 scrollButton.addEventListener("click", () => {
@@ -312,7 +322,7 @@ const swiper1 = new Swiper('.swiper1', {
     spaceBetween: 10,
     breakpoints: {
         // when window width is >= 640px
-        768: {
+        650: {
           slidesPerView: 2,
           spaceBetween: 30
         },
@@ -349,7 +359,7 @@ const swiper1 = new Swiper('.swiper1', {
     spaceBetween: 10,
     breakpoints: {
         // when window width is >= 640px
-        768: {
+        650: {
           slidesPerView: 2,
           spaceBetween: 30
         },
@@ -430,6 +440,9 @@ const swiper1 = new Swiper('.swiper1', {
       spaceBetween: 14,
 
       breakpoints: {
+        650: {
+          slidesPerView: 2,
+        },
         768: {
           slidesPerView: 2,
           grid: {
@@ -466,6 +479,7 @@ const swiper1 = new Swiper('.swiper1', {
     autoHeight: true,
     spaceBetween: 16,
     slidesPerView: 1.2,
+    speed: 600,
 
       breakpoints: {
         768: {
@@ -667,30 +681,30 @@ const swiper12 = new Swiper('.swiper12', {
     let windowHeight = document.documentElement.clientHeight;
 
     if (wrap1Pos.top < windowHeight) {
-      setTranslate(wrap1Pos.top * 1, imageCont1);
-      imageCont1.children[0].style.opacity = 1;
-      setTranslate(wrap1Pos.top * 1, imageCont2);
-      imageCont2.children[0].style.opacity = 1;
-      setTranslate(wrap1Pos.top * 1, imageCont3);
-      imageCont3.children[0].style.opacity = 1;
+      setTranslate(wrap1Pos.top * 0.3, imageCont1);
+      imageCont1.children[0].style.display = "block";
+      setTranslate(wrap1Pos.top * 0.3, imageCont2);
+      imageCont2.children[0].style.display = "block";
+      setTranslate(wrap1Pos.top * 0.3, imageCont3);
+      imageCont3.children[0].style.display = "block";
     }
 
     if (wrap2Pos.top < windowHeight) {
-      setTranslate(wrap2Pos.top * 1, imageCont4);
-      imageCont4.children[0].style.opacity = 1;
-      setTranslate(wrap2Pos.top * 1, imageCont5);
-      imageCont5.children[0].style.opacity = 1;
-      setTranslate(wrap2Pos.top * 1, imageCont6);
-      imageCont6.children[0].style.opacity = 1;
+      setTranslate(wrap2Pos.top * 0.3, imageCont4);
+      imageCont4.children[0].style.display = "block";
+      setTranslate(wrap2Pos.top * 0.3, imageCont5);
+      imageCont5.children[0].style.display = "block";
+      setTranslate(wrap2Pos.top * 0.3, imageCont6);
+      imageCont6.children[0].style.display = "block";
     }
 
     if (wrap3Pos.top < windowHeight) {
-      setTranslate(wrap3Pos.top * 1, imageCont7);
-      imageCont7.children[0].style.opacity = 1;
-      setTranslate(wrap3Pos.top * 1, imageCont8);
-      imageCont8.children[0].style.opacity = 1;
-      setTranslate(wrap3Pos.top * 1, imageCont9);
-      imageCont9.children[0].style.opacity = 1;
+      setTranslate(wrap3Pos.top * 0.3, imageCont7);
+      imageCont7.children[0].style.display = "block";
+      setTranslate(wrap3Pos.top * 0.3, imageCont8);
+      imageCont8.children[0].style.display = "block";
+      setTranslate(wrap3Pos.top * 0.3, imageCont9);
+      imageCont9.children[0].style.display = "block";
     }
     
     window.requestAnimationFrame(scrollLoop);

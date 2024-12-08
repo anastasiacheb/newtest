@@ -343,8 +343,10 @@ button {
   font-style: normal;
   color: #363636;
 }
-.button:hover img {
-  filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
+@media screen and (min-width: 768px) {
+  .button:hover img {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
+  }
 }
 .button:disabled {
   background: linear-gradient(180deg, #D1D1D1 0%, #CDCBCA 100%), linear-gradient(0deg, #818181, #818181);
@@ -726,7 +728,7 @@ input:-webkit-autofill:active {
   left: 1.2rem;
   display: none;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card-img {
     display: block !important;
   }
@@ -1025,10 +1027,6 @@ input:-webkit-autofill:active {
   background-color: #FFFFFF;
   border-radius: 1.5rem;
   padding: 1.6rem 1.8rem;
-}
-.card-cli__content > p {
-  max-height: calc(100vh - 7.2rem - 3rem - 1.5rem - 13rem);
-  overflow-y: auto;
 }
 @media screen and (min-width: 768px) {
   .card-cli__content {
@@ -1394,19 +1392,24 @@ input:-webkit-autofill:active {
   height: 100vh;
   margin-top: 0 !important;
   position: relative;
+  max-width: unset !important;
+  padding: 0 !important;
+  text-align: left !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .popup5__wrap {
-    padding: 0;
+    padding: 0 !important;
+    max-width: 117rem !important;
   }
 }
 .popup5__buttons {
   display: flex;
   gap: 2rem;
   justify-content: center;
+  z-index: 2000;
 }
 .popup5__buttons button {
   margin-left: 0;
@@ -1417,6 +1420,7 @@ input:-webkit-autofill:active {
 }
 .popup5__swiper {
   max-width: 67rem !important;
+  padding-top: 1.5rem;
 }
 
 .header {
@@ -1853,12 +1857,14 @@ input:-webkit-autofill:active {
     border: none;
     padding: 0;
     width: auto;
-    gap: 2rem;
+    gap: 3.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 @media screen and (min-width: 1000px) {
   .nav__menu {
-    gap: 3.5rem;
+    gap: 2rem;
   }
 }
 .nav__link {
@@ -1867,7 +1873,6 @@ input:-webkit-autofill:active {
   font-style: normal;
   font-size: 2.2rem;
   line-height: 4rem;
-  text-transform: capitalize;
   padding: 0 2.7rem;
   width: 100%;
   display: block;
@@ -1952,11 +1957,13 @@ input:-webkit-autofill:active {
   padding-top: 3rem;
   padding-bottom: 2rem;
   position: relative;
+  scroll-margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
   .section-one {
     padding-top: 9rem;
     padding-bottom: 0;
+    scroll-margin-top: 0;
   }
 }
 .section-one__image {
@@ -2262,7 +2269,7 @@ input:-webkit-autofill:active {
 .section-cont__image {
   position: fixed;
   z-index: -1;
-  opacity: 0;
+  display: none;
 }
 .section-cont__image1 {
   bottom: -20rem;
@@ -2272,12 +2279,13 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 768px) {
   .section-cont__image1 {
-    bottom: 0;
+    bottom: -30rem;
   }
 }
 @media screen and (min-width: 1120px) {
   .section-cont__image1 {
     right: 20%;
+    bottom: -20rem;
   }
 }
 .section-cont__image2 {
@@ -2288,12 +2296,13 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 768px) {
   .section-cont__image2 {
-    bottom: 5rem;
+    bottom: -30rem;
     right: 10rem;
   }
 }
 @media screen and (min-width: 1120px) {
   .section-cont__image2 {
+    bottom: -15rem;
     right: 19%;
   }
 }
@@ -2306,18 +2315,18 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 768px) {
   .section-cont__image3 {
-    bottom: 20rem;
+    bottom: 0rem;
     right: 0;
   }
 }
 @media screen and (min-width: 1120px) {
   .section-cont__image3 {
-    bottom: 15rem;
+    bottom: 0rem;
     right: 10%;
   }
 }
 .section-cont__image4 {
-  bottom: -20rem;
+  bottom: -40rem;
   width: 54rem;
   height: auto;
   right: 0;
@@ -2328,7 +2337,7 @@ input:-webkit-autofill:active {
   }
 }
 .section-cont__image5 {
-  bottom: 0;
+  bottom: -15rem;
   transform: rotate(45deg);
   width: 37rem;
   height: auto;
@@ -2349,7 +2358,7 @@ input:-webkit-autofill:active {
   }
 }
 .section-cont__image6 {
-  bottom: 10rem;
+  bottom: -5rem;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -2512,6 +2521,7 @@ input:-webkit-autofill:active {
 
 .section-answ {
   padding: 4rem 0 6rem 0;
+  scroll-margin-top: 40px;
 }
 @media screen and (min-width: 768px) {
   .section-answ {
@@ -2562,6 +2572,12 @@ input:-webkit-autofill:active {
 }
 .section-dec__slider {
   position: relative;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .section-dec__slider {
+    margin-bottom: 0;
+  }
 }
 .section-dec h2 {
   text-align: center;
@@ -2572,7 +2588,7 @@ input:-webkit-autofill:active {
   }
 }
 .section-dec__wrap {
-  margin: 2rem 0 4.5rem 0;
+  margin: 2rem 0 0 0;
 }
 @media screen and (min-width: 768px) {
   .section-dec__wrap {
@@ -2580,8 +2596,9 @@ input:-webkit-autofill:active {
   }
 }
 .section-dec__buttons {
+  display: none;
   position: absolute;
-  bottom: 8rem;
+  bottom: 2.6rem;
   left: 50%;
   display: flex;
   gap: 1rem;
@@ -2651,7 +2668,8 @@ input:-webkit-autofill:active {
   background-color: #474339;
   padding: 3.4rem 0 5.5rem 0;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
+  scroll-margin-top: 40px;
 }
 .section-cli__wrap {
   padding-right: 2.2rem;
@@ -2663,51 +2681,37 @@ input:-webkit-autofill:active {
     padding-left: 0;
   }
 }
-.section-cli__card {
-  max-height: calc(100vh - 7.2rem - 3rem - 1.5rem);
-}
 .section-cli__image {
   position: fixed;
-  opacity: 0;
+  display: none;
 }
 .section-cli__image1 {
   top: 20rem;
   height: auto;
-  left: -50rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 88rem;
-}
-@media screen and (min-width: 1200px) {
-  .section-cli__image1 {
-    left: 5rem;
-    width: 88rem;
-    height: auto;
-    z-index: -1;
-  }
+  z-index: -1;
+  transform: translateX(-50%);
 }
 .section-cli__image2 {
   height: auto;
   width: 71rem;
-  top: 0;
-  right: -20rem;
-}
-@media screen and (min-width: 1200px) {
-  .section-cli__image2 {
-    top: 0;
-    width: 71rem;
-    right: -10rem;
-  }
+  top: -20rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateX(100%);
 }
 .section-cli__image3 {
-  top: 100%;
+  top: 80rem;
   width: 50rem;
   height: auto;
-  transform: rotate(20deg);
-  right: 0rem;
-}
-@media screen and (min-width: 1200px) {
-  .section-cli__image3 {
-    right: 20rem;
-  }
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateX(100%);
 }
 .section-cli h2 {
   text-align: center;
@@ -3289,7 +3293,6 @@ input:-webkit-autofill:active {
   font-style: normal;
   font-size: 2.2rem;
   line-height: 4rem;
-  text-transform: capitalize;
   padding: 0 2.7rem;
   width: 100%;
   display: block;

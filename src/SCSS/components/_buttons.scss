@@ -5,12 +5,14 @@
     transition: $transition;
     @include medium;
     color: $black;
-
-    &:hover {
-        & img {
-            filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
-         }
-        }
+    @include tablet {
+        &:hover {
+            & img {
+                filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
+             }
+            }
+    }
+    
     
 
     &:disabled {

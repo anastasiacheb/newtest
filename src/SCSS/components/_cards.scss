@@ -52,7 +52,7 @@
         left: 1.2rem;
         display: none;
 
-    @include screen(450px) {
+    @include tablet {
         display: block !important;
     }
     }
@@ -359,11 +359,6 @@
         background-color: $white;
         border-radius: 1.5rem;
         padding: 1.6rem 1.8rem;
-
-        & > p {
-            max-height: calc(100vh - 7.2rem - 3rem - 1.5rem - 13rem);
-            overflow-y: auto;
-        }
 
         @include tablet {
             padding: 1.6rem 2.4rem;

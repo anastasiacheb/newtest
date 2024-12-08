@@ -153,18 +153,19 @@
             border: none;
             padding: 0;
             width: auto;
-            gap: 2rem;
+            gap: 3.5rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
         }
 
         @include screen(1000px) {
-            gap: 3.5rem;
+            gap: 2rem;
         }
     }
 
     &__link {
         @include medium;
         @include font(2.2, 4);
-        text-transform: capitalize;
         padding: 0 2.7rem;
         width: 100%;
         display: block;
