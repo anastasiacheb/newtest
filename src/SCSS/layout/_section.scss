@@ -7,6 +7,15 @@
         max-width: 117rem;
         margin: auto;
     }
+
+    &-slide {
+        padding-right: 0;
+        padding-left: 0;
+        @include tablet {
+            padding-right: 2.2rem;
+            padding-left: 2.2rem;
+        }
+    }
 }
 
 .section-one {
@@ -324,87 +333,99 @@
     overflow: hidden;
 
     &__image {
-        position: absolute;
+        position: fixed;
+        z-index: -1;
+        opacity: 0;
     }
 
     &__image1 {
-        top: 15rem;
+        bottom: -20rem;
         width: 40rem;
+        height: auto;
+        right: 10rem;
+
+        @include tablet {
+            bottom: 0;
+        }
+
+        @include desktop {
+            right: 20%;
+        }
+    }
+
+    &__image2 {
+        bottom: -22rem;
+        width: 15rem;
+        height: auto;
+        right: 0;
+
+        @include tablet {
+            bottom: 5rem;
+            right: 10rem;
+        }
+
+        @include desktop {
+            right: 19%;
+        }
+    }
+
+    &__image3 {
+        bottom: 5rem;
+        width: 25rem;
+        height: auto;
+        transform: rotate(20deg);
+        right: -10rem;
+
+        @include tablet {
+            bottom: 20rem;
+            right: 0;
+        }
+
+        @include desktop {
+            bottom: 15rem;
+            right: 10%;
+        } 
+    }
+
+    &__image4 {
+        bottom: -20rem;
+        width: 54rem;
+        height: auto;
+        //z-index: 1000;
+        right: 0;
+        @include desktop {
+            right: 20rem;
+        }
+    }
+
+    &__image5 {
+        bottom: 0;
+        transform: rotate(45deg);
+        width: 37rem;
         height: auto;
         right: -10rem;
 
         @include tablet {
-            top: 260rem;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
+            right: -15rem;
             width: 40rem;
             height: auto;
             z-index: 1000;
-            transform: translateX(35rem);
+            transform: rotate(45deg);
         }
-        
-    }
 
-    &__image2 {
-        top: 287rem;
-        width: 15rem;
-        height: auto;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        transform: translateX(55rem);
-    }
-
-    &__image3 {
-        top: 270rem;
-        width: 25rem;
-        height: auto;
-        transform: rotate(20deg);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        transform: translateX(65rem);
-    }
-
-    &__image4 {
-        top: 430rem;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 54rem;
-        height: auto;
-        z-index: 1000;
-        transform: translateX(50rem);
-    }
-
-    &__image5 {
-        transform: rotate(45deg);
-        width: 37rem;
-        height: auto;
-        top: 25rem;
-        right: -12rem;
-
-        @include tablet {
-            top: 450rem;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 40rem;
-            height: auto;
-            z-index: 1000;
-            transform: translateX(75rem) rotate(45deg);
+        @include desktop {
+            right: -10rem;
         }
     }
 
     &__image6 {
-        top: 445rem;
+        bottom: 10rem;
         left: 0;
         right: 0;
         margin: 0 auto;
         width: 30rem;
         height: auto;
-        z-index: 1000;
+        //z-index: 1000;
         transform: translateX(0rem);
     }
 
@@ -438,11 +459,24 @@
                 position: absolute;
                 top: 0;
                 padding: 0;
+                width: 30rem;
+            }
+
+            @include screen(800px) {
+                width: 30rem;
+            }
+
+            @include screen(850px) {
+                width: 37rem;
+            }
+            @include screen(1100px) {
+                width: 42rem;
             }
         }
     }
 
     &__inner {
+        width: max-content;
         & p:first-child {
             @include font(1.8, 2.2);
         }
@@ -450,6 +484,7 @@
         & a:last-child {
             @include font(3.5, 2.2);
             padding-top: 1rem;
+            width: max-content;
 
             @include tablet {
                 padding-top: 3rem;
@@ -591,6 +626,10 @@
     position: relative;
     margin: 5rem auto;
 
+    &__slider {
+        position: relative;
+    }
+
     & h2 {
         text-align: center;
     }
@@ -626,19 +665,53 @@
     }
 
     &__btns {
+        position: absolute;
+        
         & button:first-child {
             bottom: 0;
         }
     }
 
     &__left {
-        top: 420px;
-        left: 5rem;
+        top: 50%;
+        left: 3rem;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        /*@include screen(850px) {
+            top: 500px;
+            left: 5rem;
+        }
+
+        @include screen(1000px) {
+            top: 420px;
+            left: 5rem;
+        }*/
     }
 
     &__right {
-        top: 420px;
-        right: 5rem;
+        top: 50%;
+        right: 3rem;
+
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        /*@include screen(850px) {
+            top: 500px;
+            right: 5rem;
+        }
+
+        @include screen(1000px) {
+            top: 420px;
+            right: 5rem;
+        }*/
+        
     }
 
     & .swiper-button-prev:after {
@@ -656,21 +729,35 @@
     position: relative;
     overflow: hidden;
 
+    &__wrap {
+        padding-right: 2.2rem;
+        padding-left: 2.2rem;
+
+        @include tablet {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__card {
+        max-height: calc(100vh - 7.2rem - 3rem - 1.5rem);
+    }
+
     &__image {
-        position: absolute;
+        position: fixed;
+        opacity: 0;
     }
 
     &__image1 {
-        top: 250rem;
+        top: 20rem;
         height: auto;
         left: -50rem;
         width: 88rem;
         @include screen(1200px){
-            top: 240rem;
         left: 5rem;
         width: 88rem;
         height: auto;
-        z-index: 1000;
+        z-index: -1;
         }
         
     }
@@ -678,25 +765,24 @@
     &__image2 {
         height: auto;
         width: 71rem;
-        top: 100rem;
+        top: 0;
         right: -20rem;
         @include screen(1200px) {
-            top: 90rem;
-            width: 71rem;
+            top: 0;           
+             width: 71rem;
             right: -10rem;
         }
         
     }
 
     &__image3 {
-        top: 420rem;
+        top: 100%;        
         width: 50rem;
         height: auto;
         transform: rotate(20deg);
         right: 0rem;
 
         @include screen(1200px) {
-            top: 400rem;
             right: 20rem;
         }
     }
@@ -770,10 +856,12 @@
     padding-top: 4.4rem;
     padding-bottom: 4.4rem;
     position: relative;
+    padding-right: 0;
 
     @include tablet {
         padding-top: 10rem;
         padding-bottom: 10rem;
+        padding-right: 2.2rem;
     }
 
     & h2 {
@@ -904,6 +992,11 @@
         object-fit: contain;
         left: 25rem;
         top: -15rem;
+        display: none;
+
+        @include screen(450px) {
+            display: block;
+        }
     }
 }
 
@@ -1033,9 +1126,10 @@
             bottom: 0;
             object-fit: contain;
             right: 0;
-            //z-index: 100;
+            z-index: 100;
             @include screen(1100px) {
                 width: 80rem;
+                z-index: 1;
             }
         }
 

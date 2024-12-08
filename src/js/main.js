@@ -465,6 +465,15 @@ const swiper1 = new Swiper('.swiper1', {
     loop: true,
     autoHeight: true,
     spaceBetween: 16,
+    slidesPerView: 1.2,
+
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+        },
+        
+      },
+    
   
     // Navigation arrows
     navigation: {
@@ -524,7 +533,6 @@ const swiper12 = new Swiper('.swiper12', {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 10,
-  autoHeight: true,
   
 
     // Navigation arrows
@@ -625,3 +633,70 @@ const swiper12 = new Swiper('.swiper12', {
       }
     })
   }*/
+
+    
+
+    function setTranslate(yPos, el) {
+      el.style.transform = "translate3d(0, " + yPos + "px, 0)";
+  }
+  
+  let imageCont1 = document.querySelector("#image1");
+  let imageCont2 = document.querySelector("#image2");
+  let imageCont3 = document.querySelector("#image3");
+  let imageCont4 = document.querySelector("#image4");
+  let imageCont5 = document.querySelector("#image5");
+  let imageCont6 = document.querySelector("#image6");
+  let imageCont7 = document.querySelector("#image7");
+  let imageCont8 = document.querySelector("#image8");
+  let imageCont9 = document.querySelector("#image9");
+
+  let wrap1 = document.querySelector("#image1wrap");
+  let wrap2 = document.querySelector("#image2wrap");
+  let wrap3 = document.querySelector(".image3wrap");
+
+  let yScrollPosition;
+
+  
+  
+  function scrollLoop() {
+    yScrollPosition = window.scrollY;
+    let wrap1Pos = wrap1.getBoundingClientRect();
+    let wrap2Pos = wrap2.getBoundingClientRect();
+    let wrap3Pos = wrap3.getBoundingClientRect();
+
+    let windowHeight = document.documentElement.clientHeight;
+
+    if (wrap1Pos.top < windowHeight) {
+      setTranslate(wrap1Pos.top * 1, imageCont1);
+      imageCont1.children[0].style.opacity = 1;
+      setTranslate(wrap1Pos.top * 1, imageCont2);
+      imageCont2.children[0].style.opacity = 1;
+      setTranslate(wrap1Pos.top * 1, imageCont3);
+      imageCont3.children[0].style.opacity = 1;
+    }
+
+    if (wrap2Pos.top < windowHeight) {
+      setTranslate(wrap2Pos.top * 1, imageCont4);
+      imageCont4.children[0].style.opacity = 1;
+      setTranslate(wrap2Pos.top * 1, imageCont5);
+      imageCont5.children[0].style.opacity = 1;
+      setTranslate(wrap2Pos.top * 1, imageCont6);
+      imageCont6.children[0].style.opacity = 1;
+    }
+
+    if (wrap3Pos.top < windowHeight) {
+      setTranslate(wrap3Pos.top * 1, imageCont7);
+      imageCont7.children[0].style.opacity = 1;
+      setTranslate(wrap3Pos.top * 1, imageCont8);
+      imageCont8.children[0].style.opacity = 1;
+      setTranslate(wrap3Pos.top * 1, imageCont9);
+      imageCont9.children[0].style.opacity = 1;
+    }
+    
+    window.requestAnimationFrame(scrollLoop);
+  }
+  
+  //window.addEventListener("scroll", scrollLoop);
+
+  window.addEventListener("scroll", scrollLoop);
+  

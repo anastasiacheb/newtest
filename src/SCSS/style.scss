@@ -9,6 +9,12 @@
     }
 }
 
+.elem_mobile-geo {
+    @include screen(450px) {
+        display: none;
+    }
+}
+
 .elem_mobile-nav {
     @include screen(915px) {
         display: none;
@@ -35,6 +41,14 @@
     display: none;
 
     @include screen(1050px) {
+        display: block;
+    }
+}
+
+.elem_tablet-card {
+    display: none;
+
+    @include screen(450px) {
         display: block;
     }
 }

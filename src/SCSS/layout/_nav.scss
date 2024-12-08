@@ -144,7 +144,9 @@
         left: 0;
         border-top: 1px solid #EAE5D1;
         border-bottom: 1px solid #EAE5D1;
-        padding: 2rem 0;
+        padding: 10rem 0;
+        flex: 1;
+        justify-content: space-between;
 
         @include screen(915px) {
             flex-direction: row;

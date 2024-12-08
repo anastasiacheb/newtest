@@ -6,6 +6,13 @@
     @include medium;
     color: $black;
 
+    &:hover {
+        & img {
+            filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
+         }
+        }
+    
+
     &:disabled {
         background: linear-gradient(180deg, #D1D1D1 0%, #CDCBCA 100%), linear-gradient(0deg, #818181, #818181);
         box-shadow: 0px 3px 0px #B2B2B2;
@@ -75,10 +82,14 @@
         border-radius: 100%;
         border: 1px solid $lightgray;
 
-        &:hover {
-            background-color: $dark;
-            border: 1px solid $dark;
+        @include tablet {
+            &:hover {
+                background-color: $dark;
+                border: 1px solid $dark;
+            }
         }
+
+        
     }
 
     &_round-l {
@@ -88,10 +99,12 @@
         border-radius: 100%;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
+        @include tablet {
         &:hover {
             background-color: $orange;
             box-shadow: none;
         }
+    }
 
         @include tablet {
             width: 6rem;
@@ -104,16 +117,19 @@
         box-shadow: 0px 3px 0px #D96900;
         color: $white;
 
+        @include tablet {
         &:hover {
             background: linear-gradient(180deg, #534F43 0%, #464238 100%);
             box-shadow: 0px 3px 0px #3C3830;
         }
+    }
     }
 
     &_white {
         background: $white;
         color: $black;
 
+        @include tablet {
         &:hover {
             background-color: $orange;
             color: $white;
@@ -122,14 +138,16 @@
                 filter: brightness(0) saturate(100%) invert(94%) sepia(55%) saturate(24%) hue-rotate(355deg) brightness(107%) contrast(105%);
              }
             }
-
+        }
         & span {
             transition: $transition;
         }
 
+        @include tablet {
         &:hover span {
             color: $white;
         }
+    }
 
     }
 
@@ -137,9 +155,11 @@
         border: 1px solid $lightbrown;
         @include semibold;
 
+        @include tablet {
         &:hover {
             border: 1px solid $orange;
         }
+    }
     }
 
     &_orange-big {
@@ -147,21 +167,25 @@
         box-shadow: 0px 5px 0px #D96900;
         color: $white;
 
+        @include tablet {
         &:hover {
             background: linear-gradient(180deg, #FF9430 0%, #F16E0A 100%);
             box-shadow: 0px 5px 0px #D96900;
         }
+    }
 
     }
 
     &_border-orange {
         border: 2px solid $orange;
 
+        @include tablet {
         &:hover {
             border: 2px solid $dark;
             background-color: $dark;
             color: $white;
         }
+    }
     }
 
     &_icon {
@@ -181,9 +205,11 @@
     color: $lightgray;
     border-bottom: 0.5px solid $lightgray;
 
+    @include tablet {
     &:hover {
         border-bottom: 0.5px solid transparent;
     }
+}
 
     &_light {
         color: $muteorange;

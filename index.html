@@ -33,7 +33,7 @@
           </button>
         </div>
         <div class="nav__menu">
-          <a href="#" class="nav__link">об услуге</a>
+          <a href="#принципы" class="nav__link">об услуге</a>
           <a href="#star" class="nav__link">Знаменитости</a>
           <a href="#compare" class="nav__link">Преимущества</a>
           <a href="#услуги" class="nav__link">все Услуги</a>
@@ -60,7 +60,7 @@
           </button>
         </div>
         <div class="nav__menu">
-          <a href="#" class="nav__link">об услуге</a>
+          <a href="#принципы" class="nav__link">об услуге</a>
           <a href="#star" class="nav__link">Знаменитости</a>
           <a href="#compare" class="nav__link">Преимущества</a>
           <a href="#услуги" class="nav__link">все Услуги</a>
@@ -572,7 +572,7 @@
       </div>
     </header>
 
-    <section class="section-one">
+    <section id="принципы" class="section-one">
       <h2 class="text-h2 section">Принципы натальной карты</h2>
       <div class="section-one__wrap">
         <div class="section-one__content">
@@ -971,7 +971,7 @@
               <h3 class="card-h3">Предназначение</h3>
             <h4 class="card-h4 elem_mobile">В обычную версию входит</h4>
             <h4 class="card-h4 elem_tablet">В обычную<br>версию входит</h4>
-            <img src="public/images/Scene1121(1).webp" alt="image" class="image elem_tablet card-img">
+            <img src="public/images/Scene1121(1).webp" alt="image" class="image elem_tablet-card card-img">
             <div class="card__list">
               <div class="card__item">
                 <div>
@@ -1285,7 +1285,7 @@
       </div>
     </section>
 
-    <section class="section-cont">
+    <section id="image1wrap" class="section-cont section-cont1">
       <div class="section-cont__header">
         <h2 class="text_white text_bold section elem_mobile">Заказать<br>натальную карту!<br>Выберите<br>удобный вариант<br>для связи</h2>
         <h2 class="text_white text_bold section elem_tablet">Заказать натальную карту! Выберите удобный вариант для связи</h2>
@@ -1294,13 +1294,14 @@
           <div class="elem_mobile">
             <img src="public/images/365016381.webp" alt="decor" class="section-cont__image section-cont__image1">
           </div>
-          <div class="rellax elem_tablet" data-rellax-speed="3">
+            <!-- <div id="image1" class="section-cont__image section-cont__image1 elem_tablet"></div> -->
+          <div id="image1" class="elem_tablet">
             <img src="public/images/365016381.webp" alt="decor" class="section-cont__image section-cont__image1">
           </div>
-          <div class="rellax elem_tablet" data-rellax-speed="3">
+          <div id="image2" class="elem_tablet">
             <img src="public/images/00_00001959-800x800копия1(1).webp" alt="decor" class="section-cont__image section-cont__image2">
           </div>
-          <div class="rellax elem_tablet" data-rellax-speed="3">
+          <div id="image3" class="elem_tablet">
             <img src="public/images/2200-.png" alt="decor" class="section-cont__image section-cont__image3">
           </div>
           <div class="section section-cont__container section-cont__cont">
@@ -1377,6 +1378,12 @@
             </div>
           </div>
         </div>
+          <button class="button button_round-l button_white swiper-button-prev swiper-button-prev1 section-dec__left">
+            <img src="public/icons/l.svg" alt="icon" class="icon_xxs">
+          </button>
+          <button class="button button_round-l button_white swiper-button-next swiper-button-next1 section-dec__right">
+            <img src="public/icons/r.svg" alt="icon" class="icon_xxs">
+          </button>
       </div>
       <div class="section-dec__buttons elem_mobile">
         <button class="button button_round-l button_white swiper-button-prev swiper-button-prev1">
@@ -1386,14 +1393,7 @@
           <img src="public/icons/r.svg" alt="icon" class="icon_xxs">
         </button>
       </div>
-      <div class="elem_tablet section-dec__btns">
-        <button class="button button_round-l button_white swiper-button-prev swiper-button-prev1 section-dec__left">
-          <img src="public/icons/l.svg" alt="icon" class="icon_xxs">
-        </button>
-        <button class="button button_round-l button_white swiper-button-next swiper-button-next1 section-dec__right">
-          <img src="public/icons/r.svg" alt="icon" class="icon_xxs">
-        </button>
-      </div>
+      
       <button class="button button_orange-big button_l button_icon button_popup1">ЗАКАЗАТЬ РАСЧЁТ</button>
     </section>
 
@@ -1929,17 +1929,17 @@
       
     </section>
 
-    <section id="отзывы" class="section-cli">
-      <div class="rellax elem_tablet" data-rellax-speed="2">
+    <section id="отзывы" class="section-cli image3wrap">
+      <div id="image7" class="elem_tablet">
         <img src="public/images/gas-kvas-com-p-belii-royal-na-prozrachnom-fone-15копия1.webp" alt="decor" class="section-cli__image section-cli__image1">
       </div>
-      <div class="rellax elem_tablet" data-rellax-speed="1">
+      <div id="image8" class="elem_tablet">
         <img src="public/images/365016381.webp" alt="decor" class="section-cli__image section-cli__image2">
       </div>
-      <div class="rellax elem_tablet" data-rellax-speed="3">
+      <div id="image9" class="elem_tablet">
         <img src="public/images/drumpng.parspng.com-111.webp" alt="decor" class="section-cli__image section-cli__image3">
       </div>
-      <div class="section">
+      <div class="section section-slide">
         <h2 class="text-h2 text_white">Что говорят клиенты</h2>
         <div class="section-cli__wrap swiper swiper4">
           <div class="section-cli__slider swiper-wrapper">
@@ -2618,7 +2618,7 @@
       </div>
       <div class="section-geo__content">
         <div class="section section-geo__wrap">
-          <img src="public/images/страны.svg" alt="map" class="section-geo__map elem_tablet">
+          <img src="public/images/страны.svg" alt="map" class="section-geo__map">
           <div class="section-geo__list">
             <div class="section-geo__item">
               <div>
@@ -2674,7 +2674,7 @@
               <p>3,1 %</p>
             </div>
 
-            <div class="section-geo__item elem_mobile">
+            <div class="section-geo__item elem_mobile-geo">
               <div>
                 <img src="public/icons/uz1.svg" alt="icon" class="icon_l">
               </div>
@@ -2683,7 +2683,7 @@
               <p>2,9 %</p>
             </div>
 
-            <div class="section-geo__item elem_mobile">
+            <div class="section-geo__item elem_mobile-geo">
               <div>
                 <img src="public/icons/md1.svg" alt="icon" class="icon_l">
               </div>
@@ -2692,7 +2692,7 @@
               <p>2,6 %</p>
             </div>
 
-            <div class="section-geo__item elem_mobile">
+            <div class="section-geo__item elem_mobile-geo">
               <div>
                 <img src="public/icons/2857246312_preview_Эстония1.svg" alt="icon" class="icon_l icon_l2">
               </div>
@@ -2701,7 +2701,7 @@
               <p>2,4 %</p>
             </div>
 
-            <div class="section-geo__item elem_mobile">
+            <div class="section-geo__item elem_mobile-geo">
               <div>
                 <img src="public/icons/канада1.svg" alt="icon" class="icon_l icon_l2">
               </div>
@@ -2837,23 +2837,23 @@
       </div>
     </section>
 
-    <section class="section-cont">
+    <section id="image2wrap" class="section-cont section-cont2">
       <div class="elem_mobile">
         <img src="public/images/drumpng.parspng.com-111.webp" alt="decor" class="section-cont__image section-cont__image5">
       </div>
-      <div class="rellax elem_tablet" data-rellax-speed="3">
+      <div id="image4" class="elem_tablet">
         <img src="public/images/365016381.webp" alt="decor" class="section-cont__image section-cont__image4">
       </div>
-      <div class="rellax elem_tablet" data-rellax-speed="3">
+      <div id="image5" class="elem_tablet">
         <img src="public/images/drumpng.parspng.com-111.webp" alt="decor" class="section-cont__image section-cont__image5">
       </div>
-      <div class="rellax elem_tablet" data-rellax-speed="3">
+      <div id="image6" class="elem_tablet">
         <img src="public/images/2200-.png" alt="decor" class="section-cont__image section-cont__image6">
       </div>
       <div class="section-cont__content">
         <h2 class="text_white text_semibold elem_mobile">Хотите задать вопрос<br>или сделать заказ?</h2>
         <div class="section section-cont__container">
-          <h2 class="text_white text_semibold elem_tablet">Хотите задать вопрос<br>или сделать заказ?</h2>
+          <h2 class="text_white text_semibold elem_tablet">Хотите задать вопрос или сделать заказ?</h2>
           <div class="section-cont__inner">
             <p class="text_bold text_white">Свяжитесь с нами по номеру:</p>
             <a href="https://api.whatsapp.com/send/?phone=%2B79811461382&text&type=phone_number&app_absent=0" class="text_semibold text_white">8 (981) 146-13-82</a>
@@ -2918,8 +2918,8 @@
         любых иных действий, предусмотренных действующим законодательством РФ, как
         неавтоматизированными, так и автоматизированными способами.</p>
     </div>
-    <button class="close_popup4 popup4__close">
-      <img src="public/icons/clos.svg" alt="кнопка меню" class="icon_l">
+    <button class="button button_round popup__button close_popup4 popup4__close">
+      <img src="public/icons/close.svg" alt="icon" class="icon_xs">
     </button>
   </div>
 
@@ -2934,7 +2934,7 @@
           </button>
         </div>
         <div class="footer__menu">
-          <a href="#" class="footer__link footer__link_active">об услуге</a>
+          <a href="#принципы" class="footer__link footer__link_active">об услуге</a>
           <a href="#star" class="footer__link">Знаменитости</a>
           <a href="#compare" class="footer__link">Преимущества</a>
           <a href="#услуги" class="footer__link">все Услуги</a>
@@ -2978,7 +2978,7 @@
           </div>
           <div class="footer__menu elem_tablet">
             <h2>Меню</h2>
-            <a href="#" class="footer__link">об услуге</a>
+            <a href="#принципы" class="footer__link">об услуге</a>
             <a href="#star" class="footer__link">Звезды говорят </a>
             <a href="#compare" class="footer__link">Преимущества</a>
             <a href="#услуги" class="footer__link">все Услуги</a>
