@@ -4,6 +4,22 @@
     padding-top: 5.7rem;
     overflow: hidden;
     position: relative;
+
+    // @include desktop {
+    //     &::after {
+    //         content: "";
+    //         box-shadow: inset 0px 0px 54px rgba(0, 0, 0, 0.1);
+    //         position: absolute;
+    //         bottom: 20rem;
+    //         left: 0;
+    //         right: 0;
+    //         margin: auto;
+    //         width: calc(100vw - 117rem);
+    //         height: 1000px;
+    //         z-index: 1000;
+    //         transform: translateX(calc(117rem/2 + 50%));
+    //     }
+    // }
     
     &__buttons {
         position: relative;
@@ -64,6 +80,8 @@
         @include screen(570px) {
             max-width: 117rem;
             margin: auto;
+            //box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.1);
+
         }
     }
 
@@ -158,17 +176,21 @@
         padding: 0 2.2rem  !important;
         padding-top: 6.8rem !important;
         padding-bottom: 3.8rem !important;
+        position: relative;
 
         &:hover .header__buttons {
             opacity: 1;
         }
 
         @include screen(570px) {
-            padding: 0 2.2rem !important;
+            padding: 0 !important;
             padding-top: 19.7rem !important;
             padding-bottom: 8rem !important;
             max-width: 117rem;
             margin: auto;
+
+            //box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.1);
+
         }
     }
 

@@ -622,6 +622,8 @@ button {
   font-style: normal;
   background: linear-gradient(180deg, #FF9900 0%, #FF7F24 100%), #FF9900;
   box-shadow: 0px 0px 40px rgba(255, 153, 0, 0.41);
+  z-index: 1000;
+  position: relative;
 }
 
 input:-webkit-autofill,
@@ -675,6 +677,7 @@ input:-webkit-autofill:active {
   justify-content: space-between;
   height: auto;
   position: relative;
+  position: relative;
 }
 .card-h3 {
   font-family: "Gilroy", sans-serif;
@@ -687,7 +690,7 @@ input:-webkit-autofill:active {
   padding-left: 0.8rem;
   padding-top: 0.8rem;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card-h3 {
     text-align: center;
   }
@@ -702,7 +705,7 @@ input:-webkit-autofill:active {
   padding-left: 0.8rem;
   padding-top: 0.4rem;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card-h4 {
     font-size: 2rem;
     line-height: 2.2rem;
@@ -739,7 +742,7 @@ input:-webkit-autofill:active {
   gap: 1.2rem;
   padding-top: 1.2rem;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card__list {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -787,12 +790,12 @@ input:-webkit-autofill:active {
   margin: auto;
   margin-top: 0.4rem;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card button {
     margin-top: 1rem;
   }
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card {
     padding: 3rem;
   }
@@ -800,7 +803,7 @@ input:-webkit-autofill:active {
 .card_var {
   color: #FFFFFF;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 460px) {
   .card_var .card_list {
     gap: 3rem;
   }
@@ -823,7 +826,7 @@ input:-webkit-autofill:active {
 .card__tag_gray {
   border: 1px solid #868686;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 768px) {
   .card__tag {
     padding: 1rem 3rem;
     border-radius: 1.2rem;
@@ -854,6 +857,12 @@ input:-webkit-autofill:active {
   position: absolute;
   top: 0;
   transform: translateY(-50%);
+}
+.card__tag-stick {
+  position: sticky !important;
+  background-color: palevioletred !important;
+  top: 5rem;
+  left: 20rem;
 }
 .card__foot {
   width: 100%;
@@ -1012,9 +1021,14 @@ input:-webkit-autofill:active {
   justify-content: space-between;
   width: 80vw;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 460px) {
   .card-cli {
-    height: 36.5rem !important;
+    height: 45rem !important;
+  }
+}
+@media screen and (min-width: 580px) {
+  .card-cli {
+    height: 40rem !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1032,6 +1046,10 @@ input:-webkit-autofill:active {
   .card-cli__content {
     padding: 1.6rem 2.4rem;
   }
+}
+.card-cli__content > p {
+  max-height: calc(100svh - 30rem);
+  overflow-y: auto;
 }
 .card-cli__content p:last-child {
   font-size: 1.7rem;
@@ -1595,13 +1613,14 @@ input:-webkit-autofill:active {
   padding: 0 2.2rem !important;
   padding-top: 6.8rem !important;
   padding-bottom: 3.8rem !important;
+  position: relative;
 }
 .header__content:hover .header__buttons {
   opacity: 1;
 }
 @media screen and (min-width: 570px) {
   .header__content {
-    padding: 0 2.2rem !important;
+    padding: 0 !important;
     padding-top: 19.7rem !important;
     padding-bottom: 8rem !important;
     max-width: 117rem;
@@ -1858,8 +1877,8 @@ input:-webkit-autofill:active {
     padding: 0;
     width: auto;
     gap: 3.5rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
   }
 }
 @media screen and (min-width: 1000px) {
