@@ -951,7 +951,7 @@
         @include column;
         gap: 1.2rem;
 
-        @include tablet {
+        @include screen(450px) {
             width: 19rem;
         }
     }
