@@ -874,6 +874,11 @@
         @include tablet {
             margin-top: 9rem;
             max-width: 90rem;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        @include screen(1050px) {
             margin-left: auto;
             margin-right: auto;
         }
@@ -940,7 +945,7 @@
         background-color: $background_light;
         padding: 2.6rem 0 4.3rem 0;
 
-        @include tablet {
+        @include screen(450px) {
             padding: 10rem 0 8.7rem 0;
         }
     }

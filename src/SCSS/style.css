@@ -1139,8 +1139,13 @@ input:-webkit-autofill:active {
 @media screen and (min-width: 768px) {
   .card-case {
     flex-direction: row-reverse;
-    gap: 9rem;
+    gap: 2rem;
     align-items: start;
+  }
+}
+@media screen and (min-width: 900px) {
+  .card-case {
+    gap: 9rem;
   }
 }
 .card-case__image {
@@ -1305,6 +1310,7 @@ input:-webkit-autofill:active {
   text-align: left;
   color: #868686;
   width: 100%;
+  display: inline;
 }
 @media screen and (min-width: 768px) {
   .popup__wrap p:last-child {
@@ -1438,6 +1444,10 @@ input:-webkit-autofill:active {
 .popup5__swiper {
   max-width: 67rem !important;
   padding-top: 1.5rem;
+}
+
+.button_popup4 {
+  display: inline-block;
 }
 
 .header {
@@ -1925,6 +1935,9 @@ input:-webkit-autofill:active {
   flex-direction: column;
   align-items: end;
   padding: 1.6rem 3rem 2rem 0;
+}
+.nav__phone_center {
+  padding: 1.6rem 0 2rem 0;
 }
 @media screen and (min-width: 768px) {
   .nav__phone {
@@ -2807,6 +2820,12 @@ input:-webkit-autofill:active {
   .section-case__wrap {
     margin-top: 9rem;
     max-width: 90rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .section-case__wrap {
     margin-left: auto;
     margin-right: auto;
   }
@@ -2864,7 +2883,7 @@ input:-webkit-autofill:active {
   background-color: #FFFDF3;
   padding: 2.6rem 0 4.3rem 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 450px) {
   .section-geo__content {
     padding: 10rem 0 8.7rem 0;
   }

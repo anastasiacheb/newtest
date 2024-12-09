@@ -66,6 +66,7 @@
             text-align: left;
             color: $lightgray;
             width: 100%;
+            display: inline;
 
             @include tablet {
                 @include font(1.2, 1.7);
@@ -200,4 +201,8 @@
         max-width: 67rem !important;
         padding-top: 1.5rem;
     }
+}
+
+.button_popup4 {
+    display: inline-block;
 }
