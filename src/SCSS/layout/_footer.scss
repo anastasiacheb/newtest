@@ -82,8 +82,12 @@
 
         @include tablet {
             border: none;
-            width: auto;
+            //width: auto;
             padding: 0;
+            //margin-left: 1rem;
+            //width: min-content;
+            //display: inline-flex !important;
+            flex: 0 1;
 
             &_down {
                 padding-top: 5rem;
@@ -94,6 +98,8 @@
                 @include medium;
                 @include font(2.8, 4);
                 margin-bottom: 1rem;
+                width: max-content;
+                display: inline-flex;
             }
         }
     }
@@ -109,13 +115,14 @@
         color: $white;
 
         @include tablet {
-            width: auto;
+            width: max-content;
             padding: 0;
             @include font(1.5, 4.8);
             text-transform: uppercase; 
             text-decoration: underline;
             color: $lightgray;
         }
+
 
         &:hover {
             text-decoration: none;
@@ -158,6 +165,9 @@
 
         @include tablet {
             padding: 0;
+            //margin-left: 1rem;
+            width: auto;
+            flex-shrink: 3;
         }
 
         & h2 {
@@ -173,6 +183,7 @@
             @include tablet {
                 @include font(1.7, 3.4);
                 padding-top: 1rem;
+                width: auto;
             }
         }
     }
@@ -215,10 +226,11 @@
             max-width: 117rem;
             width: 100%;
             margin: auto;
+            gap: 1rem;
             justify-content: space-between;
             padding-top: 6rem;
             padding-bottom: 4rem;
-            gap: 1rem;
+            
         }
     }
 

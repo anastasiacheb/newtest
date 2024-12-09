@@ -1858,8 +1858,8 @@ input:-webkit-autofill:active {
     padding: 0;
     width: auto;
     gap: 3.5rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -3271,8 +3271,8 @@ input:-webkit-autofill:active {
 @media screen and (min-width: 768px) {
   .footer__menu {
     border: none;
-    width: auto;
     padding: 0;
+    flex: 0 1;
   }
   .footer__menu_down {
     padding-top: 5rem;
@@ -3285,6 +3285,9 @@ input:-webkit-autofill:active {
     font-size: 2.8rem;
     line-height: 4rem;
     margin-bottom: 1rem;
+    width: -moz-max-content;
+    width: max-content;
+    display: inline-flex;
   }
 }
 .footer__link {
@@ -3302,7 +3305,8 @@ input:-webkit-autofill:active {
 }
 @media screen and (min-width: 768px) {
   .footer__link {
-    width: auto;
+    width: -moz-max-content;
+    width: max-content;
     padding: 0;
     font-size: 1.5rem;
     line-height: 4.8rem;
@@ -3353,6 +3357,8 @@ input:-webkit-autofill:active {
 @media screen and (min-width: 768px) {
   .footer__loc {
     padding: 0;
+    width: auto;
+    flex-shrink: 3;
   }
 }
 .footer__loc h2 {
@@ -3373,6 +3379,7 @@ input:-webkit-autofill:active {
     font-size: 1.7rem;
     line-height: 3.4rem;
     padding-top: 1rem;
+    width: auto;
   }
 }
 .footer__burger {
@@ -3414,10 +3421,10 @@ input:-webkit-autofill:active {
     max-width: 117rem;
     width: 100%;
     margin: auto;
+    gap: 1rem;
     justify-content: space-between;
     padding-top: 6rem;
     padding-bottom: 4rem;
-    gap: 1rem;
   }
 }
 .footer__button {
