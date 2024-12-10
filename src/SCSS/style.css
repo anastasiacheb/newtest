@@ -1310,7 +1310,6 @@ input:-webkit-autofill:active {
   text-align: left;
   color: #868686;
   width: 100%;
-  display: inline;
 }
 @media screen and (min-width: 768px) {
   .popup__wrap p:last-child {
