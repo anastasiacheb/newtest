@@ -545,3 +545,17 @@
         }
     }
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table, td, th {
+    border: 1px solid black;
+  }
+
+td{
+    text-align: left;
+    padding: 1rem;
+  }

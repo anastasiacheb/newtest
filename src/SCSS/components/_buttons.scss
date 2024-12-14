@@ -83,6 +83,8 @@
         height: 3.6rem;
         border-radius: 100%;
         border: 1px solid $lightgray;
+        background-color: $white;
+
 
         @include tablet {
             &:hover {
@@ -200,6 +202,20 @@
             line-height: 0;
         }
     }
+
+    &_blur {
+        background: linear-gradient(0deg, #FFFFFF -58%, rgba(255, 255, 255, 0) 316%);
+        backdrop-filter: blur(15.55px);
+
+        @include screen(570px) {
+            border: 1px solid $lightbrown;
+            @include semibold;
+            backdrop-filter: none;
+            background: none;
+        &:hover {
+            border: 1px solid $orange;
+        }
+    }}
 }
 
 .link {
@@ -224,6 +240,8 @@
         @include font(1.7, 2);
         @include medium;
         display: inline-block;
+        z-index: 200;
+        position: relative;
     }
 }
 
@@ -300,5 +318,10 @@
         box-shadow: 0px 0px 40px rgba(255, 153, 0, 0.41);
         z-index: 1000;
         position: relative;
+    }
+
+    &_red {
+        background-color: red;
+        color: $white;
     }
 }

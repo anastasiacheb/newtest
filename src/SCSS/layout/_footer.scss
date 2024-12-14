@@ -170,11 +170,20 @@
             flex-shrink: 3;
         }
 
+        
+
         & h2 {
             color: $white;
             @include medium;
             @include font(2.8, 4);
             margin-bottom: 1rem;
+        }
+
+        &_mobile {
+            border-top: 1px solid #595447;
+            & h2 {
+                @include font(2.2, 4);
+            }
         }
 
         & p {

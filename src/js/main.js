@@ -138,16 +138,18 @@ let popup4Close = document.querySelector(".close_popup4");
 for (let i = 0; i < popup4Button.length; i++) {
   popup4Button[i].addEventListener("click", () => {
     popup4.classList.remove("invisible");
+    document.body.style.overflow = "hidden";
   })
 }
 
 popup4Close.addEventListener("click", () => {
   popup4.classList.add("invisible");
+  document.body.style.overflow = "auto";
 })
 
 popup4Close.addEventListener("click", enableScroll);
 for (let i = 0; i < popup4Button.length; i++) {
-  popup4Button[i].addEventListener("click", disableScroll)
+  popup4Button[i].addEventListener("click", disableScroll);
 }
 
 
@@ -426,6 +428,7 @@ const swiper1 = new Swiper('.swiper1', {
     // Optional parameters
     loop: true,
     autoHeight: true,
+    initialSlide: 1,
   
     // Navigation arrows
     navigation: {
@@ -531,11 +534,25 @@ const slides7 = document.querySelectorAll('.swiper7-slide');
 var swiper7 = new Swiper(".swiper7", {
   effect: "fade",
   autoHeight: true,
+  slidesPerView: 'auto',
   pagination: {
     el: ".swiper7-pagination",
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="pag pag-' + [index]+ ' ' + className + '">' + slides7[index].dataset.name + "</span>";
+    },
+  },
+});
+
+const slides71 = document.querySelectorAll('.swiper71-slide');
+var swiper71 = new Swiper(".swiper71", {
+  effect: "fade",
+  autoHeight: true,
+  pagination: {
+    el: ".swiper71-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="pag pag-' + [index]+ ' ' + className + '">' + slides71[index].dataset.name + "</span>";
     },
   },
 });

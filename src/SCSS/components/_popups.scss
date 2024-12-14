@@ -141,23 +141,28 @@
     bottom: 0;
     right: 0;
     @include center;
+    align-items: start;
     z-index: 3000;
     background-color: $white;
 
     &.invisible {
         display: none;
         opacity: 0;
-        transition: opacity 0.3s display 1s;
     }
 
     &__close {
-        position: absolute;
+        position: fixed;
         top: 2rem;
         right: 2rem;
+        z-index: 2000;
+
+        @include tablet {
+            right: 4rem;
+        }
     }
 
     &__wrap {
-        max-width: 60rem !important;
+        //max-width: 60rem !important;
         text-align: center;
     }
 
@@ -206,3 +211,42 @@
 .button_popup4 {
     display: inline-block;
 }
+
+.popup4 {
+    overflow-y: scroll;
+    text-align: left;
+    padding: 5rem 0;
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        height: auto;
+        //overflow: scroll;
+        align-items: start;
+        width: 100%;
+    }
+
+    & p {
+        text-align: left;
+    }
+
+    & h3 {
+        @include font(1.9, 2.2);
+    
+        @include tablet {
+            @include font(3.3, 4);
+            
+        }
+    }
+    
+    & h4 {
+        @include font(1.7, 2.1);
+    
+        @include tablet {
+            @include font(2.5, 3);
+            padding-top: 2rem;
+        }
+    }
+}
+

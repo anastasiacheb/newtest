@@ -71,3 +71,21 @@
 .text_bold {
     @include bold;
 }
+
+.text_bullet {
+    position: relative;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+    &::before {
+        content: "";
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: $orange;
+        display: inline-block;
+        border-radius: 100%;
+        margin-right: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+}

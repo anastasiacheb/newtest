@@ -74,7 +74,7 @@
 
         &.invisible {
             height: 0;
-            top: -100%;
+            top: -150%;
         }
     }
 
@@ -110,7 +110,7 @@
 
         &.invisible {
             height: 0;
-            top: -100%;
+            top: -150%;
 
             @include screen(915px) {
                 height: auto;
